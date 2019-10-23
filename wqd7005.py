@@ -11,23 +11,23 @@ class Gold:
     def __init__(self, url):
         self.url = url
 
-    def get_data(self):
-        res = urllib.request.urlopen(self.url)
-        data_body = res.read().decode("utf-8")
-        raw_data = json.loads(data_body)
+    def crawl_data(self):
+        response = urllib.request.urlopen(self.url)
+        gold_data_decode = response.read().decode("utf-8")
+        gold_raw_json = json.loads(gold_data_decode)
         try:
-            data_list = raw_data["data"]
-            for item_dict in data_list:
-                self.store(item_dict)
+            gold_list = gold_raw_json["data"]
+            for i in gold_list:
+                self.data_trasfer(i)
         except KeyError:
-            print("Invalid Key!!!")
+            print("Error->Key is invalid")
 
-    def store(self,data):
-        conn = pymysql.connect(host="127.0.0.1", user="root", passwd="password", db="mysql")
-        cur = conn.cursor()
+    def data_trasfer(self, data):
+        database_connection = pymysql.connect(host="127.0.0.1", user="root", passwd="123456", db="mysql")
+        cur = database_connection.cursor()
         try:
-            cur.execute("USE DataMiningAssignment")
-            sql_query = "INSERT INTO GoldDataFinal (golddate, openprice, highprice, lowprice, closeprice, volume)" \
+            cur.execute("USE stockDB")
+            sql_query = "INSERT INTO Gold_table (golddate, openprice, highprice, lowprice, closeprice, volume)" \
                         " VALUES (%s,%s,%s,%s,%s,%s)"
             try:
                 cur.execute(sql_query,
@@ -39,19 +39,7 @@ class Gold:
 
         finally:
             cur.close()
-            conn.close()
+            database_connection.close()
 
 gold_data = Gold(url)
-gold_data.get_data()
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+gold_data.crawl_data()
