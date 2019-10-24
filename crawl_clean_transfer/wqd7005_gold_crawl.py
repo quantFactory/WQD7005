@@ -1,9 +1,11 @@
 from urllib.request import Request, urlopen
 import urllib
-import string
-from datetime import datetime
 import json
 import pymysql
+import string
+from datetime import datetime
+
+
 
 url = "https://advcharts.investing.com/advinion2016/advanced-charts/1/1/8/GetRecentHistory?strSymbol=8836&iTop=1500&strPriceType=bid&strFieldsMode=allFields&strExtraData=lang_ID=1&strTimeFrame=1D"
 
