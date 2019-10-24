@@ -42,6 +42,7 @@ class Silver:
         finally:
             cur.close()
             conn.close()
-
-silver_data = Silver(url)
-silver_data.crawl_data()
+#creating an instance of class silver and revoking
+#crawl_data method
+silver_instance = Silver(url)
+silver_instance.crawl_data()
