@@ -1,0 +1,214 @@
+*------------------------------------------------------------*
+User:                amir_
+Date:                May 15, 2019
+Time:                23:41:37
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+ Role        Level         Count
+ 
+INPUT      INTERVAL          5
+INPUT      NOMINAL           1
+TARGET     INTERVAL          1
+ 
+ 
+ 
+ 
+Predicted and decision variables
+ 
+Type           Variable              Label
+ 
+TARGET       stockprice
+PREDICTED    P_stockprice    Predicted: stockprice
+RESIDUAL     R_stockprice    Residual: stockprice
+ 
+ 
+ 
+ 
+ 
+The DMREG Procedure
+ 
+               Model Information
+ 
+Training Data Set             WORK.EM_DMREG.VIEW
+DMDB Catalog                  WORK.REG3_DMDB
+Target Variable               stockprice
+Target Measurement Level      Interval
+Error                         Normal
+Link Function                 Identity
+Number of Model Parameters    7
+Number of Observations        20
+ 
+ 
+                             Analysis of Variance
+ 
+                                   Sum of
+Source                 DF         Squares     Mean Square    F Value    Pr > F
+ 
+Model                   5        0.068011        0.013602       3.30    0.0356
+Error                  14        0.057764        0.004126
+Corrected Total        19        0.125775
+ 
+ 
+              Model Fit Statistics
+ 
+R-Square        0.5407     Adj R-Sq        0.3767
+AIC          -104.9424     BIC           -98.1669
+SBC           -98.9680     C(p)            6.0000
+ 
+ 
+              Type 3 Analysis of Effects
+ 
+                            Sum of
+Effect            DF       Squares    F Value    Pr > F
+ 
+gasprice           1        0.0076       1.84    0.1963
+goldprice          1        0.0131       3.18    0.0961
+newspolarity       1        0.0014       0.34    0.5719
+oilprice           1        0.0060       1.46    0.2474
+polarity_cat       1        0.0188       4.55    0.0511
+silverprice        0         .            .       .
+ 
+ 
+                 Analysis of Maximum Likelihood Estimates
+ 
+                                           Standard
+Parameter                DF    Estimate       Error    t Value    Pr > |t|
+ 
+Intercept                 1      8.3317      2.7207       3.06      0.0084
+gasprice                  1      0.4116      0.3034       1.36      0.1963
+goldprice                 1     -0.2759      0.1547      -1.78      0.0961
+newspolarity              1     -0.0349      0.0602      -0.58      0.5719
+oilprice                  1      0.0188      0.0156       1.21      0.2474
+polarity_cat negative     1     -0.0530      0.0248      -2.13      0.0511
+silverprice               0           0           .        .         .
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Fit Statistics
+ 
+Target=stockprice Target Label=' '
+ 
+   Fit
+Statistics    Statistics Label                     Train    Validation
+ 
+ _AIC_        Akaike's Information Criterion    -104.942       .
+ _ASE_        Average Squared Error                0.003      0.00632
+ _AVERR_      Average Error Function               0.003      0.00632
+ _DFE_        Degrees of Freedom for Error        14.000       .
+ _DFM_        Model Degrees of Freedom             6.000       .
+ _DFT_        Total Degrees of Freedom            20.000       .
+ _DIV_        Divisor for ASE                     20.000      8.00000
+ _ERR_        Error Function                       0.058      0.05059
+ _FPE_        Final Prediction Error               0.005       .
+ _MAX_        Maximum Absolute Error               0.116      0.10440
+ _MSE_        Mean Square Error                    0.004      0.00632
+ _NOBS_       Sum of Frequencies                  20.000      8.00000
+ _NW_         Number of Estimate Weights           6.000       .
+ _RASE_       Root Average Sum of Squares          0.054      0.07952
+ _RFPE_       Root Final Prediction Error          0.073       .
+ _RMSE_       Root Mean Squared Error              0.064      0.07952
+ _SBC_        Schwarz's Bayesian Criterion       -98.968       .
+ _SSE_        Sum of Squared Errors                0.058      0.05059
+ _SUMW_       Sum of Case Weights Times Freq      20.000      8.00000
+ 
+ 
+ 
+ 
+Assessment Score Rankings
+ 
+Data Role=TRAIN Target Variable=stockprice Target Label=' '
+ 
+           Number of      Mean        Mean
+Depth    Observations    Target    Predicted
+ 
+   5           1          6.81      6.78105
+  10           1          6.81      6.70385
+  15           1          6.71      6.70195
+  20           1          6.71      6.69507
+  25           1          6.63      6.68213
+  30           1          6.55      6.66561
+  35           1          6.66      6.66120
+  40           1          6.58      6.65481
+  45           1          6.71      6.65067
+  50           1          6.61      6.62971
+  55           1          6.58      6.62532
+  60           1          6.70      6.62476
+  65           1          6.62      6.60927
+  70           1          6.58      6.60862
+  75           1          6.55      6.60662
+  80           1          6.58      6.60034
+  85           1          6.65      6.59565
+  90           1          6.60      6.59420
+  95           1          6.53      6.54480
+ 100           1          6.58      6.51437
+ 
+ 
+Data Role=VALIDATE Target Variable=stockprice Target Label=' '
+ 
+           Number of      Mean        Mean
+Depth    Observations    Target    Predicted
+ 
+   5           1          6.81      6.73593
+  15           1          6.81      6.70560
+  30           1          6.60      6.68816
+  40           1          6.75      6.64874
+  55           1          6.56      6.61601
+  65           1          6.57      6.61198
+  80           1          6.58      6.53611
+  90           1          6.62      6.52329
+ 
+ 
+ 
+ 
+Assessment Score Distribution
+ 
+Data Role=TRAIN Target Variable=stockprice Target Label=' '
+ 
+  Range for         Mean        Mean        Number of      Model
+  Predicted        Target    Predicted    Observations     Score
+ 
+6.768 -  6.781    6.81000     6.78105           1         6.77438
+6.701 -  6.714    6.76000     6.70290           2         6.70771
+6.688 -  6.701    6.71000     6.69507           1         6.69438
+6.674 -  6.688    6.63000     6.68213           1         6.68104
+6.661 -  6.674    6.60500     6.66340           2         6.66771
+6.648 -  6.661    6.64500     6.65274           2         6.65438
+6.621 -  6.634    6.63000     6.62660           3         6.62771
+6.608 -  6.621    6.60000     6.60894           2         6.61437
+6.594 -  6.608    6.59333     6.60087           3         6.60104
+6.581 -  6.594    6.60000     6.59420           1         6.58771
+6.541 -  6.554    6.53000     6.54480           1         6.54770
+6.514 -  6.528    6.58000     6.51437           1         6.52104
+ 
+ 
+Data Role=VALIDATE Target Variable=stockprice Target Label=' '
+ 
+  Range for        Mean        Mean        Number of      Model
+  Predicted       Target    Predicted    Observations     Score
+ 
+6.725 -  6.736     6.810     6.73593           1         6.73061
+6.704 -  6.715     6.810     6.70560           1         6.70935
+6.683 -  6.693     6.600     6.68816           1         6.68809
+6.640 -  6.651     6.750     6.64874           1         6.64556
+6.608 -  6.619     6.565     6.61400           2         6.61366
+6.534 -  6.545     6.580     6.53611           1         6.53924
+6.523 -  6.534     6.620     6.52329           1         6.52861

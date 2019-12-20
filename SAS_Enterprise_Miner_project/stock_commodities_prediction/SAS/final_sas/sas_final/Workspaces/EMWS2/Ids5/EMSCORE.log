@@ -1,0 +1,53 @@
+*------------------------------------------------------------*
+* Score Log
+Date:                December 07, 2019
+Time:                19:53:19
+*------------------------------------------------------------*
+11545  *------------------------------------------------------------*;
+11546  * Ids5: Computing metadata for DATA data;
+11547  *------------------------------------------------------------*;
+
+NOTE: View EMWS2.IDS5_DATA.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+11548  data EMWS2.Ids5_EMINFO;
+11549  length TARGET KEY $32 DATA $43;
+11550  TARGET="";
+11551  KEY="IDSTABLE";
+11552  DATA="FINALIB.AIRASIA_CSV";
+11553  output;
+11554  TARGET="stockprice";
+11555  KEY="DECDATA";
+11556  DATA="EMWS2.Ids5_stockprice_DD";
+11557  output;
+11558  TARGET="stockprice";
+11559  KEY="DECMETA";
+11560  DATA="EMWS2.Ids5_stockprice_DM";
+11561  output;
+11562  run;
+
+NOTE: The data set EMWS2.IDS5_EMINFO has 3 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: View EMWS2.IDS5_DATA.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+11563  data EMWS2.Ids5_CMeta_DATA;
+11564  set EMWS2.Ids5_VariableSet;
+11565  drop DROP;
+11566  where DROP='N';
+11567  run;
+
+NOTE: There were 8 observations read from the data set EMWS2.IDS5_VARIABLESET.
+      WHERE DROP='N';
+NOTE: The data set EMWS2.IDS5_CMETA_DATA has 8 observations and 20 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+

@@ -1,0 +1,38 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+Role         Level         Count
+
+ID         INTERVAL           1   
+INPUT      INTERVAL          31   
+TARGET     BINARY             1   
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Model Events
+
+                                     Number
+                      Measurement      of
+ Target      Event       Level       Levels      Order       Label
+
+Attrition      1        BINARY          2      Descending         
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Predicted and decision variables
+
+Type           Variable              Label
+
+TARGET       Attrition                             
+PREDICTED    P_Attrition1    Predicted: Attrition=1
+RESIDUAL     R_Attrition1    Residual: Attrition=1 
+PREDICTED    P_Attrition0    Predicted: Attrition=0
+RESIDUAL     R_Attrition0    Residual: Attrition=0 
+FROM         F_Attrition     From: Attrition       
+INTO         I_Attrition     Into: Attrition       

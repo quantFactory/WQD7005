@@ -1,0 +1,19 @@
+*------------------------------------------------------------*
+* Report Log
+Date:                December 19, 2019
+Time:                16:53:01
+*------------------------------------------------------------*
+11666  data EMWS5.Trans_EMSCOREVAR;
+11667  length Name $32 formula $300 file $200;
+11668  keep NAME Formula file;
+11669  run;
+
+NOTE: Variable Name is uninitialized.
+NOTE: Variable formula is uninitialized.
+NOTE: Variable file is uninitialized.
+NOTE: The data set EMWS5.TRANS_EMSCOREVAR has 1 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+

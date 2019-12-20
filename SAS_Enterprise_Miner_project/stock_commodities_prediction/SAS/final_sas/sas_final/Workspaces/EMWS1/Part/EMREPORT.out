@@ -1,0 +1,28 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Summary Statistics for Interval Targets
+
+Data=DATA
+
+                                             Number of                 Standard
+ Variable     Maximum    Mean    Minimum    Observations    Missing    Deviation    Label
+
+StockPrice     6.81      6.63     6.53            21           0         0.07            
+
+
+Data=TRAIN
+
+                                             Number of                 Standard
+ Variable     Maximum    Mean    Minimum    Observations    Missing    Deviation    Label
+
+StockPrice     6.75      6.62     6.53            17           0         0.06            
+
+
+Data=VALIDATE
+
+                                             Number of                 Standard
+ Variable     Maximum    Mean    Minimum    Observations    Missing    Deviation    Label
+
+StockPrice     6.81      6.65     6.55             4           0         0.12            

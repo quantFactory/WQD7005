@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="oilmysql" Scope="LOCAL" Role="RAW" Library="FINALIB" Table="OIL_MYSQL"
+ NCols="6" NObs="1060" NBytes="66560" Segment="" DataSourceRole="RAW" OutputType="VIEW"
+ ForceRun="N" ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="oilmysql"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="ali" DsCreateDate="1892384179.8"
+ DsModifiedBy="ali" DsModifyDate="1892384179.8" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
+ Component="DataSource" RawCreateTime="1892384213.9" CreateTime="19DEC2019:14:16:54"
+ Description="" Data="FINALIB.OIL_MYSQL" CMeta="WORK.M0D2PGFD" RunId="493d012b-f01c-4705-ab7f-c0309d0547a4"
+>
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

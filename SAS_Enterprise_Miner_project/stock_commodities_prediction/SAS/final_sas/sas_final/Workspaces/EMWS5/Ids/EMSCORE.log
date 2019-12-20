@@ -1,0 +1,53 @@
+*------------------------------------------------------------*
+* Score Log
+Date:                December 19, 2019
+Time:                12:11:09
+*------------------------------------------------------------*
+11545  *------------------------------------------------------------*;
+11546  * Ids: Computing metadata for DATA data;
+11547  *------------------------------------------------------------*;
+
+NOTE: View EMWS5.IDS_DATA.VIEW used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+      
+11548  data EMWS5.Ids_EMINFO;
+11549  length TARGET KEY $32 DATA $43;
+11550  TARGET="";
+11551  KEY="IDSTABLE";
+11552  DATA="FINALIB.GOLD_MYSQL";
+11553  output;
+11554  TARGET="closeprice";
+11555  KEY="DECDATA";
+11556  DATA="EMWS5.Ids_closeprice_DD";
+11557  output;
+11558  TARGET="closeprice";
+11559  KEY="DECMETA";
+11560  DATA="EMWS5.Ids_closeprice_DM";
+11561  output;
+11562  run;
+
+NOTE: The data set EMWS5.IDS_EMINFO has 3 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: View EMWS5.IDS_DATA.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+11563  data EMWS5.Ids_CMeta_DATA;
+11564  set EMWS5.Ids_VariableSet;
+11565  drop DROP;
+11566  where DROP='N';
+11567  run;
+
+NOTE: There were 6 observations read from the data set EMWS5.IDS_VARIABLESET.
+      WHERE DROP='N';
+NOTE: The data set EMWS5.IDS_CMETA_DATA has 6 observations and 20 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+

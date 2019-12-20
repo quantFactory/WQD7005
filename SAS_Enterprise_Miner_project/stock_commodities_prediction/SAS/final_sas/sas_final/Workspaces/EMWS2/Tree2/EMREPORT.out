@@ -1,0 +1,89 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+Variable Importance
+
+                                                                                                                   Ratio of
+                         Number of                       Number of                                               Validation
+Variable                 Splitting                        Rules in           Relative         Validation        to Training
+Name            Label      Rules           Importance     CV Trees         Importance         Importance         Importance
+
+oilprice                     1                 1.0000        20                1.0000             1.0000             1.0000
+polarity_cat                 1                 0.3492        14                0.2983             0.3039             0.8702
+ 
+                                                                                                                                                                                                                                                                
+ 
+Tree Leaf Report
+
+Node               Training      Training    Validation    Training
+ Id     Depth    Observations     Average      Average     Root ASE
+
+  3       1            7           3.46           0        0.067370
+  4       2            7           3.09           0        0.084128
+  5       2            6           3.22           0        0.096853
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Fit Statistics
+
+Target=stockprice Target Label=' '
+
+   Fit
+Statistics    Statistics Label               Train     Validation
+
+  _NOBS_      Sum of Frequencies            20.0000      8.00000 
+  _MAX_       Maximum Absolute Error         0.1871      0.41286 
+  _SSE_       Sum of Squared Errors          0.1376      0.34112 
+  _ASE_       Average Squared Error          0.0069      0.04264 
+  _RASE_      Root Average Squared Error     0.0829      0.20649 
+  _DIV_       Divisor for ASE               20.0000      8.00000 
+  _DFT_       Total Degrees of Freedom      20.0000       .      
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Assessment Score Rankings
+
+Data Role=TRAIN Target Variable=stockprice Target Label=' '
+
+           Number of       Mean        Mean
+Depth    Observations     Target    Predicted
+
+   5           7         3.46429     3.46429 
+  40           6         3.21833     3.21833 
+  70           7         3.08714     3.08714 
+
+
+Data Role=VALIDATE Target Variable=stockprice Target Label=' '
+
+           Number of      Mean        Mean
+Depth    Observations    Target    Predicted
+
+   5           1         3.5100     3.46429 
+  15           3         3.1500     3.21833 
+  55           4         3.2775     3.08714 
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Assessment Score Distribution
+
+Data Role=TRAIN Target Variable=stockprice Target Label=' '
+
+  Range for         Mean        Mean        Number of      Model
+  Predicted        Target    Predicted    Observations     Score
+
+3.445 -  3.464    3.46429     3.46429           7         3.45486
+3.200 -  3.219    3.21833     3.21833           6         3.20971
+3.087 -  3.106    3.08714     3.08714           7         3.09657
+
+
+Data Role=VALIDATE Target Variable=stockprice Target Label=' '
+
+  Range for        Mean        Mean        Number of      Model
+  Predicted       Target    Predicted    Observations     Score
+
+3.445 -  3.464    3.5100     3.46429           1         3.45486
+3.200 -  3.219    3.1500     3.21833           3         3.20971
+3.087 -  3.106    3.2775     3.08714           4         3.09657

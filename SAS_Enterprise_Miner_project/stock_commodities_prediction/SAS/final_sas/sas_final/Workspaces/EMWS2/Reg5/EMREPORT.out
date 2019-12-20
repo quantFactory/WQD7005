@@ -1,0 +1,111 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Fit Statistics
+
+Target=stockprice Target Label=' '
+
+   Fit
+Statistics    Statistics Label                     Train    Validation
+
+ _AIC_        Akaike's Information Criterion    -85.6922       .      
+ _ASE_        Average Squared Error               0.0068      0.01066 
+ _AVERR_      Average Error Function              0.0068      0.01066 
+ _DFE_        Degrees of Freedom for Error       13.0000       .      
+ _DFM_        Model Degrees of Freedom            7.0000       .      
+ _DFT_        Total Degrees of Freedom           20.0000       .      
+ _DIV_        Divisor for ASE                    20.0000      8.00000 
+ _ERR_        Error Function                      0.1368      0.08531 
+ _FPE_        Final Prediction Error              0.0142       .      
+ _MAX_        Maximum Absolute Error              0.1545      0.14882 
+ _MSE_        Mean Square Error                   0.0105      0.01066 
+ _NOBS_       Sum of Frequencies                 20.0000      8.00000 
+ _NW_         Number of Estimate Weights          7.0000       .      
+ _RASE_       Root Average Sum of Squares         0.0827      0.10327 
+ _RFPE_       Root Final Prediction Error         0.1192       .      
+ _RMSE_       Root Mean Squared Error             0.1026      0.10327 
+ _SBC_        Schwarz's Bayesian Criterion      -78.7221       .      
+ _SSE_        Sum of Squared Errors               0.1368      0.08531 
+ _SUMW_       Sum of Case Weights Times Freq     20.0000      8.00000 
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Assessment Score Rankings
+
+Data Role=TRAIN Target Variable=stockprice Target Label=' '
+
+           Number of      Mean        Mean
+Depth    Observations    Target    Predicted
+
+   5           1          2.65      2.61802 
+  10           1          2.67      2.61798 
+  15           1          2.47      2.60565 
+  20           1          2.65      2.59835 
+  25           1          2.68      2.59103 
+  30           1          2.60      2.59030 
+  35           1          2.63      2.58782 
+  40           1          2.73      2.57547 
+  45           1          2.46      2.57503 
+  50           1          2.49      2.57415 
+  55           1          2.48      2.56820 
+  60           1          2.65      2.56369 
+  65           1          2.49      2.56217 
+  70           1          2.43      2.56094 
+  75           1          2.68      2.55918 
+  80           1          2.52      2.54601 
+  85           1          2.56      2.54600 
+  90           1          2.47      2.52523 
+  95           1          2.50      2.45755 
+ 100           1          2.47      2.45722 
+
+
+Data Role=VALIDATE Target Variable=stockprice Target Label=' '
+
+           Number of      Mean        Mean
+Depth    Observations    Target    Predicted
+
+   5           1          2.49      2.62876 
+  15           1          2.70      2.59090 
+  30           1          2.73      2.58118 
+  40           1          2.67      2.56174 
+  55           1          2.67      2.56087 
+  65           1          2.63      2.54673 
+  80           1          2.50      2.53577 
+  90           1          2.53      2.51714 
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Assessment Score Distribution
+
+Data Role=TRAIN Target Variable=stockprice Target Label=' '
+
+  Range for         Mean        Mean        Number of      Model
+  Predicted        Target    Predicted    Observations     Score
+
+2.610 -  2.618    2.66000     2.61800           2         2.61400
+2.602 -  2.610    2.47000     2.60565           1         2.60596
+2.594 -  2.602    2.65000     2.59835           1         2.59792
+2.586 -  2.594    2.63667     2.58972           3         2.58988
+2.570 -  2.578    2.56000     2.57488           3         2.57380
+2.562 -  2.570    2.54000     2.56469           3         2.56576
+2.554 -  2.562    2.55500     2.56006           2         2.55772
+2.546 -  2.554    2.54000     2.54601           2         2.54968
+2.522 -  2.530    2.47000     2.52523           1         2.52556
+2.457 -  2.465    2.48500     2.45738           2         2.46124
+
+
+Data Role=VALIDATE Target Variable=stockprice Target Label=' '
+
+  Range for        Mean        Mean        Number of      Model
+  Predicted       Target    Predicted    Observations     Score
+
+2.623 -  2.629     2.49      2.62876           1         2.62597
+2.590 -  2.595     2.70      2.59090           1         2.59248
+2.579 -  2.584     2.73      2.58118           1         2.58132
+2.556 -  2.562     2.67      2.56130           2         2.55900
+2.545 -  2.551     2.63      2.54673           1         2.54783
+2.534 -  2.539     2.50      2.53577           1         2.53667
+2.517 -  2.523     2.53      2.51714           1         2.51993

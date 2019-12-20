@@ -1,0 +1,29 @@
+*------------------------------------------------------------*
+ Node = 3
+*------------------------------------------------------------*
+if OilPrice < 70.72
+then 
+ Tree Node Identifier   = 3
+ Number of Observations = 5
+ Predicted: StockPrice = 2.634
+ 
+*------------------------------------------------------------*
+ Node = 5
+*------------------------------------------------------------*
+if OilPrice >= 70.72 or MISSING
+AND GasPrice < 2.5035 or MISSING
+then 
+ Tree Node Identifier   = 5
+ Number of Observations = 6
+ Predicted: StockPrice = 2.5716666667
+ 
+*------------------------------------------------------------*
+ Node = 6
+*------------------------------------------------------------*
+if OilPrice >= 70.72 or MISSING
+AND GasPrice >= 2.5035
+then 
+ Tree Node Identifier   = 6
+ Number of Observations = 6
+ Predicted: StockPrice = 2.49
+ 

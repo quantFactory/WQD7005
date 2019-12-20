@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="gasmysql" Scope="LOCAL" Role="RAW" Library="FINALIB" Table="GAS_MYSQL"
+ NCols="6" NObs="1082" NBytes="66560" Segment="" DataSourceRole="RAW" OutputType="VIEW"
+ ForceRun="N" ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="gasmysql"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="ali" DsCreateDate="1892375752.8"
+ DsModifiedBy="ali" DsModifyDate="1892375752.8" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
+ Component="DataSource" RawCreateTime="1892376414.5" CreateTime="19DEC2019:12:06:54"
+ Description="" Data="FINALIB.GAS_MYSQL" CMeta="WORK.M3EODD0G" RunId="94f33cc3-338b-4042-904c-866144781c9a"
+ RawLastTimeRun="1892377606.3" RawRunTime="2.2899999619" LastTimeRun="19DEC2019:12:26:46"
+ RunTime="0 Hr. 0 Min. 2.29 Sec.">
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

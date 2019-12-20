@@ -1,0 +1,22 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+ Role        Level         Count
+
+INPUT      INTERVAL          4    
+TARGET     INTERVAL          1    
+TIMEID     INTERVAL          1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                                                                apply_
+                                                             length                                                             start_
+Obs     name          START          END    timeinterval    OfCycle    label    timeformat                        role          end         timeformattype
+
+ 1     oildate    01NOV2015    16JAN2019    DTSEMIMONTH        24               DTDATE9.0                         TIMEID        N              DATETIME   

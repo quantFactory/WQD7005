@@ -1,0 +1,130 @@
+*------------------------------------------------------------*
+User:                amir_
+Date:                May 09, 2019
+Time:                18:18:25
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+Role         Level         Count
+ 
+ID         INTERVAL          1
+INPUT      INTERVAL          5
+INPUT      NOMINAL           1
+TARGET     INTERVAL          1
+TIMEID     INTERVAL          1
+ 
+ 
+ 
+ 
+Predicted and decision variables
+ 
+Type           Variable              Label
+ 
+TARGET       stockprice
+PREDICTED    P_stockprice    Predicted: stockprice
+RESIDUAL     R_stockprice    Residual: stockprice
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+Variable Importance
+ 
+                                                                                                               Ratio of
+                     Number of                       Number of                                               Validation
+Variable             Splitting                        Rules in           Relative         Validation        to Training
+  Name      Label      Rules           Importance     CV Trees         Importance         Importance         Importance
+ 
+oilprice                 2                 1.0000        36                1.0000             1.0000             1.0000
+ 
+ 
+ 
+Tree Leaf Report
+ 
+Node               Training      Training    Validation    Training
+ Id     Depth    Observations     Average      Average     Root ASE
+ 
+  4       2            8           2.47           0        0.019645
+  5       2            7           2.61           0        0.084128
+  2       1            5           2.64           0        0.023324
+ 
+ 
+ 
+ 
+Fit Statistics
+ 
+Target=stockprice Target Label=' '
+ 
+   Fit
+Statistics    Statistics Label               Train     Validation
+ 
+  _NOBS_      Sum of Frequencies            20.0000      8.00000
+  _MAX_       Maximum Absolute Error         0.1229      0.25875
+  _SSE_       Sum of Squared Errors          0.0554      0.11363
+  _ASE_       Average Squared Error          0.0028      0.01420
+  _RASE_      Root Average Squared Error     0.0526      0.11918
+  _DIV_       Divisor for ASE               20.0000      8.00000
+  _DFT_       Total Degrees of Freedom      20.0000       .
+ 
+ 
+ 
+ 
+Assessment Score Rankings
+ 
+Data Role=TRAIN Target Variable=stockprice Target Label=' '
+ 
+           Number of       Mean        Mean
+Depth    Observations     Target    Predicted
+ 
+   5           5         2.64400     2.64400
+  30           7         2.61286     2.61286
+  65           8         2.47125     2.47125
+ 
+ 
+Data Role=VALIDATE Target Variable=stockprice Target Label=' '
+ 
+           Number of      Mean        Mean
+Depth    Observations    Target    Predicted
+ 
+   5           5          2.598     2.64400
+  65           1          2.700     2.61286
+  80           2          2.615     2.47125
+ 
+ 
+ 
+ 
+Assessment Score Distribution
+ 
+Data Role=TRAIN Target Variable=stockprice Target Label=' '
+ 
+  Range for         Mean        Mean        Number of      Model
+  Predicted        Target    Predicted    Observations     Score
+ 
+2.635 -  2.644    2.64400     2.64400           5         2.63968
+2.609 -  2.618    2.61286     2.61286           7         2.61377
+2.471 -  2.480    2.47125     2.47125           8         2.47557
+ 
+ 
+Data Role=VALIDATE Target Variable=stockprice Target Label=' '
+ 
+  Range for        Mean        Mean        Number of      Model
+  Predicted       Target    Predicted    Observations     Score
+ 
+2.635 -  2.644     2.598     2.64400           5         2.63968
+2.609 -  2.618     2.700     2.61286           1         2.61377
+2.471 -  2.480     2.615     2.47125           2         2.47557

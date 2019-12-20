@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  Location="CATALOG" Catalog="SASHELP.EMTSDM.TSESM.SOURCE" TimeInterval="AUTO" Accumulate="TOTAL"
+ FCLead="6" FCBack="0" StartSum="1" FCMethod="BEST" BestCrit="MSE" Seasonality="DEFAULT"
+ Alpha="0.05" EXTINPUT="N" ExtendedValue="PREDICT" ExportData="DEFAULT" SmoothOutlier="N"
+ OutlierReplace="PREDICT" ClusLeadPoint="1" SIMPLE="Y" DOUBLE="Y" LINEAR="Y" DAMPTREND="Y"
+ ADDSEASONAL="Y" MULTSEASONAL="Y" WINTERS="Y" ADDWINTERS="Y" PlotLength="DEFAULT"
+ ForceRun="N" RunAction="Train" Component="TSESM" ClusInputSource="KDL" RawCreateTime="1892376641.8"
+ CreateTime="19DEC2019:12:10:42" RunId="f3e213f1-1951-4536-902b-bdf99c197d93" RawLastTimeRun="1892386454.8"
+ RawRunTime="4.1109998226" LastTimeRun="19DEC2019:14:54:15" RunTime="0 Hr. 0 Min. 4.11 Sec."
+>
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES ><![CDATA[
+USERTRAINCODE
+USERSCORECODE
+USERREPORTCODE
+]]>
+</FILEPROPERTIES></_ROOT_>

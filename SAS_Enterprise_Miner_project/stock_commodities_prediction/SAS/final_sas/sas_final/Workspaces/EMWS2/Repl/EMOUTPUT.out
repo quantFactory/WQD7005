@@ -1,0 +1,57 @@
+*------------------------------------------------------------*
+User:                ali
+Date:                December 16, 2019
+Time:                12:32:21
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+ Role        Level         Count
+ 
+INPUT      INTERVAL          5
+INPUT      NOMINAL           1
+TARGET     INTERVAL          1
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Limits and Replacement Values for Interval Variables
+ 
+                                                   Lower                     Upper
+                                      Lower     Replacement     Upper     Replacement
+Variable        Replace Variable      limit        Value        Limit        Value
+ 
+gasprice        REP_gasprice          2.3532        2.3532      2.8415       2.8415
+goldprice       REP_goldprice        14.5264       14.5264     15.4196      15.4196
+newspolarity    REP_newspolarity     -1.1345       -1.1345      1.8568       1.8568
+oilprice        REP_oilprice         67.0322       67.0322     76.1578      76.1578
+silverprice     REP_silverprice      14.5258       14.5258     15.4201      15.4201
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Replacement Counts
+ 
+Obs    Variable        Label           Role     Train
+ 
+ 1     gasprice        gasprice        INPUT      0
+ 2     goldprice       goldprice       INPUT      0
+ 3     newspolarity    newspolarity    INPUT      0
+ 4     oilprice        oilprice        INPUT      0
+ 5     silverprice     silverprice     INPUT      0

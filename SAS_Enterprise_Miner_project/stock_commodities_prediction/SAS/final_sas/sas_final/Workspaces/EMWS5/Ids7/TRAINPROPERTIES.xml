@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="attr" Scope="LOCAL" Role="RAW" Library="FINALIB" Table="ATTR" NCols="35"
+ NObs="1470" NBytes="459776" Segment="" DataSourceRole="RAW" OutputType="VIEW" ForceRun="N"
+ ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="attr"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="ali" DsCreateDate="1892391955.1"
+ DsModifiedBy="ali" DsModifyDate="1892391955.1" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
+ Component="DataSource" RawCreateTime="1892391958.5" CreateTime="19DEC2019:16:25:58"
+ Description="" Data="FINALIB.ATTR" CMeta="WORK.M3JQO4C4" RunId="c3b80917-9a3b-4674-9765-16466fccf7b1"
+ RawLastTimeRun="1892393567" RawRunTime="2.0230000019" LastTimeRun="19DEC2019:16:52:47"
+ RunTime="0 Hr. 0 Min. 2.02 Sec.">
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

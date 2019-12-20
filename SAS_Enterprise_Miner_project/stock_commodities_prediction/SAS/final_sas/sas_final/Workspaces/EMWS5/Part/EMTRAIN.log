@@ -1,0 +1,225 @@
+*------------------------------------------------------------*
+* Training Log
+Date:                December 19, 2019
+Time:                16:52:54
+*------------------------------------------------------------*
+10869  proc freq data=EMWS5.Part_VariableSet noprint;
+10870  table ROLE*LEVEL/out=WORK.PartMETA;
+10871  run;
+
+NOTE: There were 32 observations read from the data set EMWS5.PART_VARIABLESET.
+NOTE: The data set WORK.PARTMETA has 2 observations and 4 variables.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+10872  proc print data=WORK.PartMETA label noobs;
+10873  var ROLE LEVEL COUNT;
+10874  label ROLE = "%sysfunc(sasmsg(sashelp.dmine, meta_role_vlabel, NOQUOTE))" LEVEL = "%sysfunc(sasmsg(sashelp.dmine, meta_level_vlabel, NOQUOTE))" COUNT = "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))";
+10875  title9 ' ';
+10876  title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_varSummary_title  , NOQUOTE))";
+10877  run;
+
+NOTE: There were 2 observations read from the data set WORK.PARTMETA.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+10878  title10;
+
+10886  *------------------------------------------------------------*;
+10887  * Part: Determine number of observations;
+10888  *------------------------------------------------------------*;
+10889  proc sql;
+10890  reset noprint;
+10891  select count(*) into :_tmpa from EMWS5.Stat_TRAIN
+10892  ;
+NOTE: There were 1470 observations read from the data set FINALIB.ATTR.
+NOTE: View EMWS5.STAT_TRAIN.VIEW used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.04 seconds
+      
+NOTE: There were 1470 observations read from the data set EMWS5.IDS7_DATA.
+10893  quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.07 seconds
+      
+
+trainPct=53.8461538461538 validatePct=23.076923076923 testPct=23.076923076923 
+NOTE: View EMWS5.STAT_TRAIN.VIEW used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.06 seconds
+      
+10894  *------------------------------------------------------------*;
+10895  * Part: Retrieving stratification variable(s) levels;
+10896  *------------------------------------------------------------*;
+10897  proc freq data=EMWS5.Stat_TRAIN noprint;
+10898  format
+10899  Attrition BEST1.0
+10900  ;
+10901  table
+10902  Attrition
+10903  /out=WORK.Part_FREQ(drop=percent);
+10904  run;
+
+NOTE: There were 1470 observations read from the data set FINALIB.ATTR.
+NOTE: View EMWS5.STAT_TRAIN.VIEW used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.06 seconds
+      
+NOTE: There were 1470 observations read from the data set EMWS5.IDS7_DATA.
+NOTE: There were 1470 observations read from the data set EMWS5.STAT_TRAIN.
+NOTE: The data set WORK.PART_FREQ has 2 observations and 2 variables.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.06 seconds
+      
+
+10905  proc sort data=WORK.Part_FREQ;
+10906  by descending count;
+10907  run;
+
+NOTE: There were 2 observations read from the data set WORK.PART_FREQ.
+NOTE: The data set WORK.PART_FREQ has 2 observations and 2 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+10908  * Part: Retrieving levels that meet minimum requirement;
+10909  data WORK.Part_FREQ2(keep = count);
+10910  set WORK.Part_FREQ;
+10911  where (.01 * 53.8461538461538 * count) >= 3;
+10912  run;
+
+NOTE: There were 2 observations read from the data set WORK.PART_FREQ.
+      WHERE (0.5384615385*count)>=3;
+NOTE: The data set WORK.PART_FREQ2 has 2 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+10913  *------------------------------------------------------------*;
+10914  * Part: Create stratified partitioning;
+10915  *------------------------------------------------------------*;
+10916  data
+10917  EMWS5.Part_TRAIN(label="")
+10918  EMWS5.Part_VALIDATE(label="")
+10919  EMWS5.Part_TEST(label="")
+10920  ;
+10921  retain _seed_ 12345;
+10922  drop _seed_ _genvalue_;
+10923  call ranuni(_seed_, _genvalue_);
+10924  label _dataobs_ = "%sysfunc(sasmsg(sashelp.dmine, sample_dataobs_vlabel, NOQUOTE))";
+10925  _dataobs_ = _N_;
+10926  drop _c00:;
+10927  set EMWS5.Stat_TRAIN;
+10928  length _Pformat1 $58;
+10929  drop _Pformat1;
+10930  _Pformat1 = strip(put(Attrition, BEST1.0));
+10931  if
+10932  _Pformat1 = '0'
+10933  then do;
+10934  if (1233+1-_C000004)*_genvalue_ <= (664 - _C000001) then do;
+10935  _C000001 + 1;
+10936  output EMWS5.Part_TRAIN;
+10937  end;
+10938  else do;
+10939  if (1233+1-_C000004)*_genvalue_ <= (664 - _C000001 + 285 - _C000002) then do;
+10940  _C000002 + 1;
+10941  output EMWS5.Part_VALIDATE;
+10942  end;
+10943  else do;
+10944  _C000003 + 1;
+10945  output EMWS5.Part_TEST;
+10946  end;
+10947  end;
+10948  _C000004+1;
+10949  end;
+10950  else if
+10951  _Pformat1 = '1'
+10952  then do;
+10953  if (237+1-_C000008)*_genvalue_ <= (128 - _C000005) then do;
+10954  _C000005 + 1;
+10955  output EMWS5.Part_TRAIN;
+10956  end;
+10957  else do;
+10958  if (237+1-_C000008)*_genvalue_ <= (128 - _C000005 + 55 - _C000006) then do;
+10959  _C000006 + 1;
+10960  output EMWS5.Part_VALIDATE;
+10961  end;
+10962  else do;
+10963  _C000007 + 1;
+10964  output EMWS5.Part_TEST;
+10965  end;
+10966  end;
+10967  _C000008+1;
+10968  end;
+10969  run;
+
+NOTE: There were 1470 observations read from the data set FINALIB.ATTR.
+NOTE: View EMWS5.STAT_TRAIN.VIEW used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.04 seconds
+      
+NOTE: There were 1470 observations read from the data set EMWS5.IDS7_DATA.
+NOTE: There were 1470 observations read from the data set EMWS5.STAT_TRAIN.
+NOTE: The data set EMWS5.PART_TRAIN has 791 observations and 36 variables.
+NOTE: The data set EMWS5.PART_VALIDATE has 339 observations and 36 variables.
+NOTE: The data set EMWS5.PART_TEST has 340 observations and 36 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.07 seconds
+      
+
+10970  data _tempNobs;
+10971  length Type $8 Table $32 Nobs 8;
+10972  label type= "%sysfunc(sasmsg(sashelp.dmine, meta_type_vlabel,    NOQUOTE))" table = "%sysfunc(sasmsg(sashelp.dmine, meta_dataset_vlabel, NOQUOTE))" nobs = "%sysfunc(sasmsg(sashelp.dmine,  rpt_numObs_vlabel,   NOQUOTE))";
+10973  type='DATA';
+10974  table="EMWS5.Stat_TRAIN";
+10975  Nobs=1470;
+10976  output;
+10977  type='TRAIN';
+10978  table="EMWS5.Part_TRAIN";
+10979  Nobs=791;
+10980  output;
+10981  type='VALIDATE';
+10982  table="EMWS5.Part_VALIDATE";
+10983  Nobs=339;
+10984  output;
+10985  type='TEST';
+10986  table="EMWS5.Part_TEST";
+10987  Nobs=340;
+10988  output;
+10989  run;
+
+NOTE: The data set WORK._TEMPNOBS has 4 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+10990  %let _cn = %sysfunc(getoption(CENTER));
+10991  %let _nb = %sysfunc(getoption(NUMBER));
+10992  options nonumber nocenter;
+10993  proc print data=_tempNobs noobs label;
+10994  title9 ' ';
+10995  title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_partitionSummary_title, NOQUOTE))";
+10996  run;
+
+NOTE: There were 4 observations read from the data set WORK._TEMPNOBS.
+NOTE: The PROCEDURE PRINT printed page 2.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+10997  title10;
+10998  options &_cn &_nb;
+10999  run;
+

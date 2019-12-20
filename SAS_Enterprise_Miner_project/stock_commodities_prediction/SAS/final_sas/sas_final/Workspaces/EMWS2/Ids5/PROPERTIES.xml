@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="airasiacsv" Scope="LOCAL" Role="RAW" Library="FINALIB" Table="AIRASIA_CSV"
+ NCols="8" NObs="28" NBytes="66560" Segment="" DataSourceRole="RAW" OutputType="VIEW"
+ ForceRun="N" ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="airasiacsv"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="ali" DsCreateDate="1891364115.1"
+ DsModifiedBy="ali" DsModifyDate="1891364115.1" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
+ Component="DataSource" RawCreateTime="1891364784.1" CreateTime="07DEC2019:19:06:24"
+ Description="" Data="FINALIB.AIRASIA_CSV" CMeta="WORK.M1OX4D1R" RunId="0c34cb7b-d07e-4fa2-bbfd-4cf886aa424a"
+>
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

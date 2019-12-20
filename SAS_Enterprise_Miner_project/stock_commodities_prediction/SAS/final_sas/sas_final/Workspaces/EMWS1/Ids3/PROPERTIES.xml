@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="cimbdataset" Scope="LOCAL" Role="RAW" Library="MILEST5" Table="CIMBDATASET"
+ NCols="6" NObs="21" NBytes="66560" Segment="" DataSourceRole="RAW" OutputType="VIEW"
+ ForceRun="N" ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="cimbdataset"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="Administrator" DsCreateDate="1872965454.3"
+ DsModifiedBy="Administrator" DsModifyDate="1872965454.4" DsScope="LOCAL" Sample="D"
+ SampleSizeType="PERCENT" SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y"
+ RunAction="Train" Component="DataSource" RawCreateTime="1872969879" CreateTime="08MAY2019:21:24:39"
+ Description="" Data="MILEST5.CIMBDATASET" CMeta="WORK.M1MSUTTF" RunId="1c254e66-bf02-4918-8801-178e66daef6a"
+>
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

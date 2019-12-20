@@ -1,0 +1,25 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+ Role        Level         Count
+
+INPUT      INTERVAL          5    
+INPUT      NOMINAL           1    
+TARGET     INTERVAL          1    
+TIMEID     INTERVAL          1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Partition Summary
+
+                                      Number of
+Type              Data Set          Observations
+
+DATA        EMWS2.Stat2_TRAIN            28     
+TRAIN       EMWS2.Part2_TRAIN            20     
+VALIDATE    EMWS2.Part2_VALIDATE          8     

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="goldmysql" Scope="LOCAL" Role="RAW" Library="FINALIB" Table="GOLD_MYSQL"
+ NCols="6" NObs="1277" NBytes="66560" Segment="" DataSourceRole="RAW" OutputType="VIEW"
+ ForceRun="N" ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="goldmysql"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="ali" DsCreateDate="1892372655.3"
+ DsModifiedBy="ali" DsModifyDate="1892372655.3" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
+ Component="DataSource" RawCreateTime="1892376398.7" CreateTime="19DEC2019:12:06:39"
+ Description="" Data="FINALIB.GOLD_MYSQL" CMeta="WORK.M0VC71OX" RunId="c8f725e1-7fac-4999-ad96-d744e53f1560"
+>
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

@@ -1,0 +1,115 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+ Role        Level         Count
+
+INPUT      INTERVAL          5    
+INPUT      NOMINAL           1    
+TARGET     INTERVAL          1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Predicted and decision variables
+
+Type           Variable              Label
+
+TARGET       stockprice                           
+PREDICTED    P_stockprice    Predicted: stockprice
+RESIDUAL     R_stockprice    Residual: stockprice 
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The DMREG Procedure
+
+               Model Information
+
+Training Data Set             WORK.EM_DMREG.VIEW
+DMDB Catalog                  WORK.REG_DMDB     
+Target Variable               stockprice        
+Target Measurement Level      Interval          
+Error                         Normal            
+Link Function                 Identity          
+Number of Model Parameters    8                 
+Number of Observations        20                
+
+
+                             Analysis of Variance
+ 
+                                   Sum of
+Source                 DF         Squares     Mean Square    F Value    Pr > F
+
+Model                   6        0.036031        0.006005       0.57    0.7472
+Error                  13        0.136849        0.010527                     
+Corrected Total        19        0.172880                                     
+
+
+              Model Fit Statistics
+
+R-Square        0.2084     Adj R-Sq       -0.1569
+AIC           -85.6922     BIC           -76.7337
+SBC           -78.7221     C(p)            7.0000
+
+
+              Type 3 Analysis of Effects
+ 
+                            Sum of
+Effect            DF       Squares    F Value    Pr > F
+
+gasprice           1        0.0044       0.42    0.5278
+goldprice          1        0.0001       0.01    0.9377
+newspolarity       1        0.0018       0.17    0.6833
+oilprice           1        0.0020       0.19    0.6734
+polarity_cat       2        0.0192       0.91    0.4260
+silverprice        0         .            .       .    
+
+
+                 Analysis of Maximum Likelihood Estimates
+ 
+                                           Standard
+Parameter                DF    Estimate       Error    t Value    Pr > |t|
+
+Intercept                 1      0.9989      4.3793       0.23      0.8231
+gasprice                  1      0.3465      0.5341       0.65      0.5278
+goldprice                 1     -0.0195      0.2443      -0.08      0.9377
+newspolarity              1      0.0303      0.0726       0.42      0.6833
+oilprice                  1      0.0132      0.0307       0.43      0.6734
+polarity_cat negative     1     -0.0544      0.0569      -0.96      0.3563
+polarity_cat neutral      1      0.0596      0.0485       1.23      0.2405
+silverprice               0           0           .        .         .    
+
+
+                                                 Estimated Covariance Matrix
+ 
+                                                                                                      polarity_      polarity_
+                                                                                                            cat            cat
+Parameter                 Intercept      gasprice      goldprice      newspolarity      oilprice       NEGATIVE        NEUTRAL
+
+Intercept                   19.1780       -0.7074        -0.7153           -0.0736       -0.0922         0.0149        -0.0561
+gasprice                    -0.7074        0.2852        -0.0588            0.0150        0.0119         0.0133         0.0044
+goldprice                   -0.7153       -0.0588         0.0597           -0.0028       -0.0004        -0.0055        -0.0003
+newspolarity                -0.0736        0.0150        -0.0028            0.0053        0.0011         0.0021         0.0011
+oilprice                    -0.0922        0.0119        -0.0004            0.0011        0.0009         0.0005         0.0007
+polarity_catNEGATIVE         0.0149        0.0133        -0.0055            0.0021        0.0005         0.0032        -0.0010
+polarity_catNEUTRAL         -0.0561        0.0044        -0.0003            0.0011        0.0007        -0.0010         0.0023
+
+
+                                                 Estimated Correlation Matrix
+ 
+                                                                                                      polarity_      polarity_
+                                                                                                            cat            cat
+Parameter                 Intercept      gasprice      goldprice      newspolarity      oilprice       NEGATIVE        NEUTRAL
+
+Intercept                   1.00000      -0.30246       -0.66865          -0.23161      -0.68654        0.05994       -0.26433
+gasprice                   -0.30246       1.00000       -0.45050           0.38728       0.72498        0.43863        0.17099
+goldprice                  -0.66865      -0.45050        1.00000          -0.15753      -0.05276       -0.39477       -0.02133
+newspolarity               -0.23161       0.38728       -0.15753           1.00000       0.47908        0.51891        0.30123
+oilprice                   -0.68654       0.72498       -0.05276           0.47908       1.00000        0.26564        0.45573
+polarity_catNEGATIVE        0.05994       0.43863       -0.39477           0.51891       0.26564        1.00000       -0.35355
+polarity_catNEUTRAL        -0.26433       0.17099       -0.02133           0.30123       0.45573       -0.35355        1.00000

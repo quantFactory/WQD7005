@@ -1,0 +1,85 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+ Role        Level         Count
+
+INPUT      INTERVAL          5    
+INPUT      NOMINAL           1    
+TARGET     INTERVAL          1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Predicted and decision variables
+
+Type           Variable              Label
+
+TARGET       stockprice                           
+PREDICTED    P_stockprice    Predicted: stockprice
+RESIDUAL     R_stockprice    Residual: stockprice 
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The DMREG Procedure
+
+               Model Information
+
+Training Data Set             WORK.EM_DMREG.VIEW
+DMDB Catalog                  WORK.REG5_DMDB    
+Target Variable               stockprice        
+Target Measurement Level      Interval          
+Error                         Normal            
+Link Function                 Identity          
+Number of Model Parameters    8                 
+Number of Observations        20                
+
+
+                             Analysis of Variance
+ 
+                                   Sum of
+Source                 DF         Squares     Mean Square    F Value    Pr > F
+
+Model                   6        0.036031        0.006005       0.57    0.7472
+Error                  13        0.136849        0.010527                     
+Corrected Total        19        0.172880                                     
+
+
+              Model Fit Statistics
+
+R-Square        0.2084     Adj R-Sq       -0.1569
+AIC           -85.6922     BIC           -76.7337
+SBC           -78.7221     C(p)            7.0000
+
+
+                Type 3 Analysis of Effects
+ 
+                                Sum of
+Effect                DF       Squares    F Value    Pr > F
+
+REP_gasprice           1        0.0044       0.42    0.5278
+REP_goldprice          1        0.0001       0.01    0.9377
+REP_newspolarity       1        0.0018       0.17    0.6833
+REP_oilprice           1        0.0020       0.19    0.6734
+REP_silverprice        0         .            .       .    
+polarity_cat           2        0.0192       0.91    0.4260
+
+
+                   Analysis of Maximum Likelihood Estimates
+ 
+                                               Standard
+Parameter                    DF    Estimate       Error    t Value    Pr > |t|
+
+Intercept                     1      0.9989      4.3793       0.23      0.8231
+REP_gasprice                  1      0.3465      0.5341       0.65      0.5278
+REP_goldprice                 1     -0.0195      0.2443      -0.08      0.9377
+REP_newspolarity              1      0.0303      0.0726       0.42      0.6833
+REP_oilprice                  1      0.0132      0.0307       0.43      0.6734
+REP_silverprice               0           0           .        .         .    
+polarity_cat     negative     1     -0.0544      0.0569      -0.96      0.3563
+polarity_cat     neutral      1      0.0596      0.0485       1.23      0.2405

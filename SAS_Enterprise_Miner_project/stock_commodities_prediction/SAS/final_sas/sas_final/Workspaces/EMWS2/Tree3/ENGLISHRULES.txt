@@ -1,0 +1,29 @@
+*------------------------------------------------------------*
+ Node = 3
+*------------------------------------------------------------*
+if oilprice >= 72.06
+then 
+ Tree Node Identifier   = 3
+ Number of Observations = 7
+ Predicted: stockprice = 6.72
+ 
+*------------------------------------------------------------*
+ Node = 4
+*------------------------------------------------------------*
+if oilprice < 72.06 or MISSING
+AND goldprice < 14.9785
+then 
+ Tree Node Identifier   = 4
+ Number of Observations = 6
+ Predicted: stockprice = 6.565
+ 
+*------------------------------------------------------------*
+ Node = 5
+*------------------------------------------------------------*
+if oilprice < 72.06 or MISSING
+AND goldprice >= 14.9785 or MISSING
+then 
+ Tree Node Identifier   = 5
+ Number of Observations = 7
+ Predicted: stockprice = 6.6171428571
+ 

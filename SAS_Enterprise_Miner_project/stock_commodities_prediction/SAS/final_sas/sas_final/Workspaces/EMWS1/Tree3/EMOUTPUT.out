@@ -1,0 +1,130 @@
+*------------------------------------------------------------*
+User:                Administrator
+Date:                May 08, 2019
+Time:                21:32:06
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+Role         Level         Count
+ 
+ID         INTERVAL          1
+INPUT      INTERVAL          4
+TARGET     INTERVAL          1
+TIMEID     INTERVAL          1
+ 
+ 
+ 
+ 
+Predicted and decision variables
+ 
+Type           Variable              Label
+ 
+TARGET       StockPrice
+PREDICTED    P_StockPrice    Predicted: StockPrice
+RESIDUAL     R_StockPrice    Residual: StockPrice
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+Variable Importance
+ 
+                                                                                                               Ratio of
+                     Number of                       Number of                                               Validation
+Variable             Splitting                        Rules in           Relative         Validation        to Training
+  Name      Label      Rules           Importance     CV Trees         Importance         Importance         Importance
+ 
+GasPrice                 1                 1.0000        19                1.0000             1.0000             1.0000
+OilPrice                 1                 0.3750        16                0.4705             0.4427             1.1803
+ 
+ 
+ 
+Tree Leaf Report
+ 
+Node               Training      Training    Validation    Training
+ Id     Depth    Observations     Average      Average     Root ASE
+ 
+  2       1            6           5.18           0        0.054288
+  5       2            6           5.06           0        0.014142
+  4       2            5           5.10           0        0.016248
+ 
+ 
+ 
+ 
+Fit Statistics
+ 
+Target=StockPrice Target Label=' '
+ 
+   Fit
+Statistics    Statistics Label               Train     Validation
+ 
+  _NOBS_      Sum of Frequencies            17.0000      4.00000
+  _MAX_       Maximum Absolute Error         0.1083      0.09167
+  _SSE_       Sum of Squared Errors          0.0202      0.00849
+  _ASE_       Average Squared Error          0.0012      0.00212
+  _RASE_      Root Average Squared Error     0.0345      0.04607
+  _DIV_       Divisor for ASE               17.0000      4.00000
+  _DFT_       Total Degrees of Freedom      17.0000       .
+ 
+ 
+ 
+ 
+Assessment Score Rankings
+ 
+Data Role=TRAIN Target Variable=StockPrice Target Label=' '
+ 
+           Number of       Mean        Mean
+Depth    Observations     Target    Predicted
+ 
+   5           6         5.17833     5.17833
+  40           5         5.10400     5.10400
+  65           6         5.06000     5.06000
+ 
+ 
+Data Role=VALIDATE Target Variable=StockPrice Target Label=' '
+ 
+           Number of      Mean        Mean
+Depth    Observations    Target    Predicted
+ 
+   5           2          5.22      5.17833
+  55           1          5.10      5.10400
+  80           1          5.06      5.06000
+ 
+ 
+ 
+ 
+Assessment Score Distribution
+ 
+Data Role=TRAIN Target Variable=StockPrice Target Label=' '
+ 
+  Range for         Mean        Mean        Number of      Model
+  Predicted        Target    Predicted    Observations     Score
+ 
+5.172 -  5.178    5.17833     5.17833           6         5.17537
+5.101 -  5.107    5.10400     5.10400           5         5.10437
+5.060 -  5.066    5.06000     5.06000           6         5.06296
+ 
+ 
+Data Role=VALIDATE Target Variable=StockPrice Target Label=' '
+ 
+  Range for        Mean        Mean        Number of      Model
+  Predicted       Target    Predicted    Observations     Score
+ 
+5.172 -  5.178     5.22      5.17833           2         5.17537
+5.101 -  5.107     5.10      5.10400           1         5.10437
+5.060 -  5.066     5.06      5.06000           1         5.06296

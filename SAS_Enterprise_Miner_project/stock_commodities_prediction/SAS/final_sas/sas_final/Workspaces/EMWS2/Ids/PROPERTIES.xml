@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="airasia" Scope="LOCAL" Role="RAW" Library="MILD5" Table="AIRASIA" NCols="8"
+ NObs="28" NBytes="66560" Segment="" DataSourceRole="RAW" OutputType="VIEW" ForceRun="N"
+ ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="airasia"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="amir_" DsCreateDate="1873043513.6"
+ DsModifiedBy="amir_" DsModifyDate="1873043513.6" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
+ Component="DataSource" RawCreateTime="1873044025.9" CreateTime="09MAY2019:18:00:26"
+ Description="" Data="MILD5.AIRASIA" CMeta="WORK.M2IKPOAU" RunId="9f88d4ed-e697-4142-9327-c8e2f1f5fc52"
+>
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

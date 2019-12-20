@@ -1,0 +1,81 @@
+*------------------------------------------------------------*
+User:                ali
+Date:                December 19, 2019
+Time:                16:52:56
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+ Role        Level         Count
+ 
+INPUT      INTERVAL          31
+TARGET     BINARY             1
+ 
+ 
+ 
+ 
+Partition Summary
+ 
+                                     Number of
+Type             Data Set          Observations
+ 
+DATA        EMWS5.Stat_TRAIN           1470
+TRAIN       EMWS5.Part_TRAIN            791
+VALIDATE    EMWS5.Part_VALIDATE         339
+TEST        EMWS5.Part_TEST             340
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Summary Statistics for Class Targets
+ 
+Data=DATA
+ 
+             Numeric    Formatted    Frequency
+Variable      Value       Value        Count      Percent    Label
+ 
+Attrition       0           0           1233      83.8776
+Attrition       1           1            237      16.1224
+ 
+ 
+Data=TEST
+ 
+             Numeric    Formatted    Frequency
+Variable      Value       Value        Count      Percent    Label
+ 
+Attrition       0           0           285       83.8235
+Attrition       1           1            55       16.1765
+ 
+ 
+Data=TRAIN
+ 
+             Numeric    Formatted    Frequency
+Variable      Value       Value        Count      Percent    Label
+ 
+Attrition       0           0           663       83.8180
+Attrition       1           1           128       16.1820
+ 
+ 
+Data=VALIDATE
+ 
+             Numeric    Formatted    Frequency
+Variable      Value       Value        Count      Percent    Label
+ 
+Attrition       0           0           285       84.0708
+Attrition       1           1            54       15.9292

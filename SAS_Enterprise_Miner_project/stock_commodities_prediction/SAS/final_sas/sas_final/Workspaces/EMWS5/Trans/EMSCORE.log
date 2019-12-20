@@ -1,0 +1,82 @@
+*------------------------------------------------------------*
+* Score Log
+Date:                December 19, 2019
+Time:                16:53:00
+*------------------------------------------------------------*
+11279  *------------------------------------------------------------*;
+11280  * Trans: Scoring DATA data;
+11281  *------------------------------------------------------------*;
+11282  data EMWS5.Trans_TRAIN
+11283  / view=EMWS5.Trans_TRAIN
+11284  ;
+11285  set EMWS5.Part_TRAIN
+11286  ;
+11287  run;
+
+NOTE: DATA STEP view saved on file EMWS5.TRANS_TRAIN.
+NOTE: A stored DATA STEP view cannot run under a different operating system.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+11288  quit;
+
+11289  *------------------------------------------------------------*;
+11290  * Trans: Scoring VALIDATE data;
+11291  *------------------------------------------------------------*;
+11292  data EMWS5.Trans_VALIDATE
+11293  / view=EMWS5.Trans_VALIDATE
+11294  ;
+11295  set EMWS5.Part_VALIDATE
+11296  ;
+11297  run;
+
+NOTE: DATA STEP view saved on file EMWS5.TRANS_VALIDATE.
+NOTE: A stored DATA STEP view cannot run under a different operating system.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+11298  quit;
+
+11299  *------------------------------------------------------------*;
+11300  * Trans: Scoring TEST data;
+11301  *------------------------------------------------------------*;
+11302  data EMWS5.Trans_TEST
+11303  / view=EMWS5.Trans_TEST
+11304  ;
+11305  set EMWS5.Part_TEST
+11306  ;
+11307  run;
+
+NOTE: DATA STEP view saved on file EMWS5.TRANS_TEST.
+NOTE: A stored DATA STEP view cannot run under a different operating system.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+11308  quit;
+
+11309  *------------------------------------------------------------*;
+11310  * Trans: Computing metadata for TRAIN data;
+11311  *------------------------------------------------------------*;
+
+NOTE: View EMWS5.TRANS_TRAIN.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+NOTE: View EMWS5.TRANS_TRAIN.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+NOTE: View EMWS5.TRANS_VALIDATE.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+NOTE: View EMWS5.TRANS_TEST.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      

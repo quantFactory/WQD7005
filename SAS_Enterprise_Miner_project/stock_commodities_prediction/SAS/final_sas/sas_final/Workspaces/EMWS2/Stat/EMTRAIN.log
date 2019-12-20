@@ -1,0 +1,140 @@
+*------------------------------------------------------------*
+* Training Log
+Date:                December 07, 2019
+Time:                18:56:16
+*------------------------------------------------------------*
+10869  proc freq data=EMWS2.Stat_VariableSet noprint;
+10870  table ROLE*LEVEL/out=WORK.StatMETA;
+10871  run;
+
+NOTE: There were 7 observations read from the data set EMWS2.STAT_VARIABLESET.
+NOTE: The data set WORK.STATMETA has 3 observations and 4 variables.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+10872  proc print data=WORK.StatMETA label noobs;
+10873  var ROLE LEVEL COUNT;
+10874  label ROLE = "%sysfunc(sasmsg(sashelp.dmine, meta_role_vlabel, NOQUOTE))" LEVEL = "%sysfunc(sasmsg(sashelp.dmine, meta_level_vlabel, NOQUOTE))" COUNT = "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))";
+10875  title9 ' ';
+10876  title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_varSummary_title  , NOQUOTE))";
+10877  run;
+
+NOTE: There were 3 observations read from the data set WORK.STATMETA.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+10878  title10;
+
+10879  data WORK.M0TSEGH4;
+10880  set WORK.M0TSEGH4;
+10881  where((role in('TARGET' 'FREQ' 'INPUT') and use in('D','Y')) or (role = 'REJECTED' and use = 'Y'));
+10882  if ROLE = 'REJECTED' then role = 'INPUT';
+10883  run;
+
+NOTE: There were 7 observations read from the data set WORK.M0TSEGH4.
+      WHERE (role in ('FREQ', 'INPUT', 'TARGET') and use in ('D', 'Y')) or ((role='REJECTED') and (use='Y'));
+NOTE: The data set WORK.M0TSEGH4 has 7 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+10884  *------------------------------------------------------------*;
+10885  * Stat: Determining Analysis Variables;
+10886  *------------------------------------------------------------*;
+10887  *------------------------------------------------------------*;
+10888  * Stat: Creating Macros for Variable Selection;
+10889  *------------------------------------------------------------*;
+10890  *------------------------------------------------------------* ;
+10891  * Stat: Interval Input Variables Macro ;
+10892  *------------------------------------------------------------* ;
+10893  %macro INTINPUTS;
+10894      gasprice goldprice newspolarity oilprice silverprice
+10895  %mend INTINPUTS;
+10896  *------------------------------------------------------------*;
+10897  * Stat: Creating Macros for Variable Selection;
+10898  *------------------------------------------------------------*;
+10899  *------------------------------------------------------------* ;
+10900  * Stat: Binary and Nominal Input Variables Macro ;
+10901  *------------------------------------------------------------* ;
+10902  %macro NOMINPUTS;
+10903      polarity_cat
+10904  %mend NOMINPUTS;
+10905  *------------------------------------------------------------*;
+10906  * Stat: Creating Macros for Variable Selection;
+10907  *------------------------------------------------------------*;
+10908  *------------------------------------------------------------* ;
+10909  * Stat: Ordinal Input Variables Macro ;
+10910  *------------------------------------------------------------* ;
+10911  %macro ORDINPUTS;
+10912  
+10913  %mend ORDINPUTS;
+10914  data work.EM_Stat_tree / view=work.EM_Stat_tree;
+NOTE: View EMWS2.IDS_DATA.VIEW used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+10915  set EMWS2.Ids_DATA(obs=100000 keep=%INTINPUTS %ORDINPUTS %NOMINPUTS stockprice);
+ERROR: Library MILD5 does not exist.
+ERROR: Failure loading view EMWS2.IDS_DATA.VIEW. Error detected during View Load request.
+10916  run;
+
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+10917  proc arbor data=EMWS2.Ids_DATA(obs=100000 keep=%INTINPUTS %ORDINPUTS %NOMINPUTS stockprice) Criterion=VARIANCE Leafsize=5 Mincatsize = 5 Maxbranch=5 Maxdepth=1 Padjust= NONE NORULELIMIT MAXRULES=6 MAXSURRS=0 Missing=USEINSEARCH Exhaustive=5000;
+NOTE: View EMWS2.IDS_DATA.VIEW used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+ERROR: Library MILD5 does not exist.
+ERROR: Failure loading view EMWS2.IDS_DATA.VIEW. Error detected during View Load request.
+10918  input %INTINPUTS / level = interval;
+ERROR: No data set open to look up variables.
+ERROR: No data set open to look up variables.
+ERROR: No data set open to look up variables.
+ERROR: No data set open to look up variables.
+ERROR: No data set open to look up variables.
+WARNING: INPUT statement ignored. Type RUN; to continue running the  procedure or QUIT; to stop.
+NOTE: The previous statement has been deleted.
+10919  input %NOMINPUTS / level=nominal;
+ERROR: No data set open to look up variables.
+WARNING: INPUT statement ignored. Type RUN; to continue running the  procedure or QUIT; to stop.
+NOTE: The previous statement has been deleted.
+10920  target stockprice / level=INTERVAL;
+ERROR: No data set open to look up variables.
+WARNING: TARGET statement ignored. Type RUN; to continue running the  procedure or QUIT; to stop.
+NOTE: The previous statement has been deleted.
+10921  Performance Disk NodeSize=10000;
+WARNING: PERFORMA statement ignored. Type RUN; to continue running the  procedure or QUIT; to stop.
+10922  Assess NoValidata measure=ASE;
+WARNING: ASSESS statement ignored. Type RUN; to continue running the  procedure or QUIT; to stop.
+10923  SUBTREE BEST;
+WARNING: SUBTREE statement ignored. Type RUN; to continue running the  procedure or QUIT; to stop.
+10924  save RULES=WORK.Stat_RULE;
+WARNING: SAVE statement ignored. Type RUN; to continue running the  procedure or QUIT; to stop.
+10925  run;
+
+10926  quit;
+
+NOTE: The SAS System stopped processing this step because of errors.
+WARNING: The data set WORK.STAT_RULE may be incomplete.  When this step was stopped there were 0 observations and 0 variables.
+NOTE: PROCEDURE ARBOR used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+*------------------------------------------------------------* 
+* 
+* ERROR: Run time error was encountered.  The system error returned was 3000. 
+* Please report unresolved problems to Technical Support. 
+* 
+*------------------------------------------------------------* 

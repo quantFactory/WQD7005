@@ -1,0 +1,420 @@
+*------------------------------------------------------------*
+User:                ali
+Date:                December 19, 2019
+Time:                16:52:53
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+ Role        Level         Count
+ 
+INPUT      INTERVAL          34
+TARGET     BINARY             1
+ 
+ 
+ 
+Variable Levels Summary
+(maximum 500 observations printed)
+ 
+                       Frequency
+Variable      Role       Count
+ 
+Attrition    TARGET        2
+ 
+ 
+ 
+Class Variable Summary Statistics
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN
+ 
+                                Number
+Data     Variable                 of                            Mode                  Mode2
+Role       Name        Role     Levels    Missing    Mode    Percentage    Mode2    Percentage
+ 
+TRAIN    Attrition    TARGET       2         0        0        83.88         1        16.12
+ 
+ 
+ 
+Distribution of Class Target and Segment Variables
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN
+ 
+Data     Variable                         Frequency
+Role       Name        Role     Level         Count    Percent
+ 
+TRAIN    Attrition    TARGET      0            1233    83.8776
+TRAIN    Attrition    TARGET      1             237    16.1224
+ 
+ 
+ 
+Interval Variable Summary Statistics
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN
+ 
+                                                 Standard          Non
+Variable                    Role         Mean    Deviation     Missing     Missing     Minimum      Median     Maximum    Skewness    Kurtosis
+ 
+Age                         INPUT    36.92381    9.135373         1470           0          18          36          60    0.413286    -0.40415
+BusinessTravel              INPUT    2.607483    0.665455         1470           0           1           3           3    -1.43901    0.702686
+DailyRate                   INPUT    802.4857    403.5091         1470           0         102         802        1499    -0.00352    -1.20382
+Department                  INPUT    2.260544    0.527792         1470           0           1           2           3    0.172231    -0.39143
+DistanceFromHome            INPUT    9.192517    8.106864         1470           0           1           7          29    0.958118    -0.22483
+Education                   INPUT    2.912925    1.024165         1470           0           1           3           5    -0.28968    -0.55911
+EducationFiled              INPUT    3.247619    1.331369         1470           0           1           3           6    0.550371    -0.68808
+EmployeeNumber              INPUT    1024.865    602.0243         1470           0           1        1019        2068    0.016574    -1.22318
+EnvironmentSatisfaction     INPUT    2.721769    1.093082         1470           0           1           3           4    -0.32165    -1.20252
+Gender                      INPUT         1.4    0.490065         1470           0           1           1           2    0.408665    -1.83549
+HourlyRate                  INPUT    65.89116    20.32943         1470           0          30          66         100    -0.03231     -1.1964
+JobInvolvement              INPUT    2.729932    0.711561         1470           0           1           3           4    -0.49842    0.270999
+JobLevel                    INPUT    2.063946     1.10694         1470           0           1           2           5    1.025401    0.399152
+JobRole                     INPUT    5.458503    2.461821         1470           0           1           6           9    -0.35727    -1.19273
+JobSatisfaction             INPUT    2.728571    1.102846         1470           0           1           3           4    -0.32967    -1.22219
+MartialStatus               INPUT    2.097279    0.730121         1470           0           1           2           3    -0.15217    -1.11504
+MonthlyIncome               INPUT    6502.931    4707.957         1470           0        1009        4908       19999    1.369817    1.005233
+MonthlyRate                 INPUT     14313.1    7117.786         1470           0        2094       14229       26999    0.018578    -1.21496
+NumCompaniesWorked          INPUT    2.693197    2.498009         1470           0           0           2           9    1.026471    0.010214
+OverTime                    INPUT    0.717007    0.450606         1470           0           0           1           1    -0.96449    -1.07122
+PercentSalaryHike           INPUT    15.20952    3.659938         1470           0          11          14          25    0.821128     -0.3006
+PerformanceRating           INPUT    3.153741    0.360824         1470           0           3           3           4    1.921883    1.695939
+RelationshipSatisfaction    INPUT    2.712245    1.081209         1470           0           1           3           4    -0.30283    -1.18481
+StockOptionLevel            INPUT    0.793878    0.852077         1470           0           0           1           3     0.96898    0.364634
+TotalWorkingYears           INPUT    11.27959    7.780782         1470           0           0          10          40    1.117172     0.91827
+TrainingTimesLastYear       INPUT     2.79932    1.289271         1470           0           0           3           6    0.553124    0.494993
+WorkLifeBalance             INPUT    2.761224    0.706476         1470           0           1           3           4    -0.55248     0.41946
+YearsAtCompany              INPUT    7.008163    6.126525         1470           0           0           5          40    1.764529    3.935509
+YearsInCurrentRole          INPUT    4.229252    3.623137         1470           0           0           3          18    0.917363    0.477421
+YearsSinceLastPromotion     INPUT    2.187755     3.22243         1470           0           0           1          15     1.98429    3.612673
+YearsWithCurrManager        INPUT    4.123129    3.568136         1470           0           0           3          17    0.833451    0.171058
+ 
+ 
+ 
+Interval Variable Summary Statistics by Class Target
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN Variable=Age
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role     Label
+ 
+Attrition      0             36           0        1233          18          60    37.56123     8.88836     0.408122    -0.41183    INPUT     Age
+Attrition      1             31           0         237          18          58    33.60759     9.68935     0.715732    -0.05704    INPUT     Age
+_OVERALL_                    36           0        1470          18          60    36.92381    9.135373     0.413286    -0.40415    INPUT     Age
+ 
+ 
+Data Role=TRAIN Variable=BusinessTravel
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role         Label
+ 
+Attrition      0              3           0        1233           1           3    2.607461      0.6802     -1.46262    0.691596    INPUT    BusinessTravel
+Attrition      1              3           0         237           1           3    2.607595    0.584062     -1.19909    0.444386    INPUT    BusinessTravel
+_OVERALL_                     3           0        1470           1           3    2.607483    0.665455     -1.43901    0.702686    INPUT    BusinessTravel
+ 
+ 
+Data Role=TRAIN Variable=DailyRate
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role       Label
+ 
+Attrition      0            813           0        1233         102        1499    812.5045    403.2084     -0.04866    -1.19807    INPUT    DailyRate
+Attrition      1            693           0         237         103        1496    750.3629    401.8995     0.234153     -1.1346    INPUT    DailyRate
+_OVERALL_                   802           0        1470         102        1499    802.4857    403.5091     -0.00352    -1.20382    INPUT    DailyRate
+ 
+ 
+Data Role=TRAIN Variable=Department
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role       Label
+ 
+Attrition      0              2           0        1233           1           3    2.245742    0.517973     0.239972     -0.2831    INPUT    Department
+Attrition      1              2           0         237           1           3    2.337553    0.571186     -0.16249     -0.6762    INPUT    Department
+_OVERALL_                     2           0        1470           1           3    2.260544    0.527792     0.172231    -0.39143    INPUT    Department
+ 
+ 
+Data Role=TRAIN Variable=DistanceFromHome
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role          Label
+ 
+Attrition      0              7           0        1233           1          29    8.915653    8.012633     1.029106    -0.04435    INPUT    DistanceFromHome
+Attrition      1              9           0         237           1          29    10.63291    8.452525     0.635903    -0.86031    INPUT    DistanceFromHome
+_OVERALL_                     7           0        1470           1          29    9.192517    8.106864     0.958118    -0.22483    INPUT    DistanceFromHome
+ 
+ 
+Data Role=TRAIN Variable=Education
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role       Label
+ 
+Attrition      0              3           0        1233           1           5    2.927007    1.027002     -0.28594    -0.56051    INPUT    Education
+Attrition      1              3           0         237           1           5    2.839662    1.008244     -0.32365    -0.55256    INPUT    Education
+_OVERALL_                     3           0        1470           1           5    2.912925    1.024165     -0.28968    -0.55911    INPUT    Education
+ 
+ 
+Data Role=TRAIN Variable=EducationFiled
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role         Label
+ 
+Attrition      0              3           0        1233           1           6    3.231955    1.310442     0.543507    -0.68629    INPUT    EducationFiled
+Attrition      1              3           0         237           1           6    3.329114     1.43552     0.550931    -0.77544    INPUT    EducationFiled
+_OVERALL_                     3           0        1470           1           6    3.247619    1.331369     0.550371    -0.68808    INPUT    EducationFiled
+ 
+ 
+Data Role=TRAIN Variable=EmployeeNumber
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role         Label
+ 
+Attrition      0           1019           0        1233           2        2068    1027.656    606.2171     0.020213    -1.24384    INPUT    EmployeeNumber
+Attrition      1           1016           0         237           1        2055    1010.346    580.7506     -0.01215     -1.1115    INPUT    EmployeeNumber
+_OVERALL_                  1019           0        1470           1        2068    1024.865    602.0243     0.016574    -1.22318    INPUT    EmployeeNumber
+ 
+ 
+Data Role=TRAIN Variable=EnvironmentSatisfaction
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role              Label
+ 
+Attrition      0              3           0        1233           1           4     2.77129    1.071132     -0.37669    -1.11492    INPUT    EnvironmentSatisfaction
+Attrition      1              3           0         237           1           4    2.464135    1.169791     -0.00899    -1.47911    INPUT    EnvironmentSatisfaction
+_OVERALL_                     3           0        1470           1           4    2.721769    1.093082     -0.32165    -1.20252    INPUT    EnvironmentSatisfaction
+ 
+ 
+Data Role=TRAIN Variable=Gender
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role     Label
+ 
+Attrition      0              1           0        1233           1           2    1.406326    0.491346     0.381915    -1.85716    INPUT    Gender
+Attrition      1              1           0         237           1           2    1.367089    0.483031     0.555006    -1.70644    INPUT    Gender
+_OVERALL_                     1           0        1470           1           2         1.4    0.490065     0.408665    -1.83549    INPUT    Gender
+ 
+ 
+Data Role=TRAIN Variable=HourlyRate
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role       Label
+ 
+Attrition      0             66           0        1233          30         100    65.95215    20.38075     -0.04795    -1.20349    INPUT    HourlyRate
+Attrition      1             65           0         237          31         100    65.57384    20.09996     0.051689    -1.15202    INPUT    HourlyRate
+_OVERALL_                    66           0        1470          30         100    65.89116    20.32943     -0.03231     -1.1964    INPUT    HourlyRate
+ 
+ 
+Data Role=TRAIN Variable=JobInvolvement
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role         Label
+ 
+Attrition      0              3           0        1233           1           4    2.770479     0.69205     -0.47049    0.367203    INPUT    JobInvolvement
+Attrition      1              3           0         237           1           4    2.518987    0.773405     -0.47958    -0.32406    INPUT    JobInvolvement
+_OVERALL_                     3           0        1470           1           4    2.729932    0.711561     -0.49842    0.270999    INPUT    JobInvolvement
+ 
+ 
+Data Role=TRAIN Variable=JobLevel
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role      Label
+ 
+Attrition      0              2           0        1233           1           5    2.145985    1.117933     0.956543    0.245313    INPUT    JobLevel
+Attrition      1              1           0         237           1           5    1.637131    0.940594     1.554019    2.126678    INPUT    JobLevel
+_OVERALL_                     2           0        1470           1           5    2.063946     1.10694     1.025401    0.399152    INPUT    JobLevel
+ 
+ 
+Data Role=TRAIN Variable=JobRole
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role      Label
+ 
+Attrition      0              6           0        1233           1           9     5.38605    2.432905     -0.37129     -1.1468    INPUT    JobRole
+Attrition      1              7           0         237           1           9    5.835443    2.579731     -0.36007    -1.44542    INPUT    JobRole
+_OVERALL_                     6           0        1470           1           9    5.458503    2.461821     -0.35727    -1.19273    INPUT    JobRole
+ 
+ 
+Data Role=TRAIN Variable=JobSatisfaction
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role          Label
+ 
+Attrition      0              3           0        1233           1           4    2.778589    1.093277     -0.38543     -1.1665    INPUT    JobSatisfaction
+Attrition      1              3           0         237           1           4    2.468354    1.118058     -0.04849    -1.36677    INPUT    JobSatisfaction
+_OVERALL_                     3           0        1470           1           4    2.728571    1.102846     -0.32967    -1.22219    INPUT    JobSatisfaction
+ 
+ 
+Data Role=TRAIN Variable=MartialStatus
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role         Label
+ 
+Attrition      0              2           0        1233           1           3    2.045418     0.72157      -0.0682    -1.07634    INPUT    MartialStatus
+Attrition      1              3           0         237           1           3    2.367089    0.716226     -0.67514    -0.79145    INPUT    MartialStatus
+_OVERALL_                     2           0        1470           1           3    2.097279    0.730121     -0.15217    -1.11504    INPUT    MartialStatus
+ 
+ 
+Data Role=TRAIN Variable=MonthlyIncome
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role         Label
+ 
+Attrition      0           5204           0        1233        1051       19999     6832.74    4818.208     1.286231    0.671641    INPUT    MonthlyIncome
+Attrition      1           3172           0         237        1009       19859    4787.093     3640.21     1.921147    4.181845    INPUT    MonthlyIncome
+_OVERALL_                  4908           0        1470        1009       19999    6502.931    4707.957     1.369817    1.005233    INPUT    MonthlyIncome
+ 
+ 
+Data Role=TRAIN Variable=MonthlyRate
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role        Label
+ 
+Attrition      0          14115           0        1233        2094       26997    14265.78    7102.261     0.019924    -1.21973    INPUT    MonthlyRate
+Attrition      1          14470           0         237        2326       26999    14559.31    7208.153     0.009252    -1.19443    INPUT    MonthlyRate
+_OVERALL_                 14229           0        1470        2094       26999     14313.1    7117.786     0.018578    -1.21496    INPUT    MonthlyRate
+ 
+ 
+Data Role=TRAIN Variable=NumCompaniesWorked
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role           Label
+ 
+Attrition      0              2           0        1233           0           9     2.64558     2.46009     1.058795    0.141433    INPUT    NumCompaniesWorked
+Attrition      1              1           0         237           0           9    2.940928    2.678519      0.86417    -0.54306    INPUT    NumCompaniesWorked
+_OVERALL_                     2           0        1470           0           9    2.693197    2.498009     1.026471    0.010214    INPUT    NumCompaniesWorked
+ 
+ 
+Data Role=TRAIN Variable=OverTime
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role      Label
+ 
+Attrition      0              1           0        1233           0           1    0.765612    0.423787     -1.25555    -0.42428    INPUT    OverTime
+Attrition      1              0           0         237           0           1    0.464135    0.499768     0.144748    -1.99596    INPUT    OverTime
+_OVERALL_                     1           0        1470           0           1    0.717007    0.450606     -0.96449    -1.07122    INPUT    OverTime
+ 
+ 
+Data Role=TRAIN Variable=PercentSalaryHike
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role           Label
+ 
+Attrition      0             14           0        1233          11          25    15.23114    3.639511     0.815342    -0.29234    INPUT    PercentSalaryHike
+Attrition      1             14           0         237          11          25    15.09705    3.770294     0.859697    -0.31616    INPUT    PercentSalaryHike
+_OVERALL_                    14           0        1470          11          25    15.20952    3.659938     0.821128     -0.3006    INPUT    PercentSalaryHike
+ 
+ 
+Data Role=TRAIN Variable=PerformanceRating
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role           Label
+ 
+Attrition      0              3           0        1233           3           4    3.153285    0.360408     1.927142     1.71666    INPUT    PerformanceRating
+Attrition      1              3           0         237           3           4    3.156118    0.363735     1.906927    1.650225    INPUT    PerformanceRating
+_OVERALL_                     3           0        1470           3           4    3.153741    0.360824     1.921883    1.695939    INPUT    PerformanceRating
+ 
+ 
+Data Role=TRAIN Variable=RelationshipSatisfaction
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role              Label
+ 
+Attrition      0              3           0        1233           1           4    2.733982    1.071603     -0.32357    -1.15045    INPUT    RelationshipSatisfaction
+Attrition      1              3           0         237           1           4    2.599156    1.125437     -0.18669    -1.34023    INPUT    RelationshipSatisfaction
+_OVERALL_                     3           0        1470           1           4    2.712245    1.081209     -0.30283    -1.18481    INPUT    RelationshipSatisfaction
+ 
+ 
+Data Role=TRAIN Variable=StockOptionLevel
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role          Label
+ 
+Attrition      0              1           0        1233           0           3    0.845093    0.841985     0.870974    0.259176    INPUT    StockOptionLevel
+Attrition      1              0           0         237           0           3    0.527426    0.856361     1.690106    2.067347    INPUT    StockOptionLevel
+_OVERALL_                     1           0        1470           0           3    0.793878    0.852077      0.96898    0.364634    INPUT    StockOptionLevel
+ 
+ 
+Data Role=TRAIN Variable=TotalWorkingYears
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role           Label
+ 
+Attrition      0             10           0        1233           0          38    11.86294    7.760719     1.066923    0.678079    INPUT    TotalWorkingYears
+Attrition      1              7           0         237           0          40    8.244726    7.169204     1.688158    3.784098    INPUT    TotalWorkingYears
+_OVERALL_                    10           0        1470           0          40    11.27959    7.780782     1.117172     0.91827    INPUT    TotalWorkingYears
+ 
+ 
+Data Role=TRAIN Variable=TrainingTimesLastYear
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role             Label
+ 
+Attrition      0              3           0        1233           0           6    2.832928    1.293585     0.590064    0.447276    INPUT    TrainingTimesLastYear
+Attrition      1              2           0         237           0           6    2.624473    1.254784     0.337787    0.658225    INPUT    TrainingTimesLastYear
+_OVERALL_                     3           0        1470           0           6     2.79932    1.289271     0.553124    0.494993    INPUT    TrainingTimesLastYear
+ 
+ 
+Data Role=TRAIN Variable=WorkLifeBalance
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role          Label
+ 
+Attrition      0              3           0        1233           1           4    2.781022    0.681907     -0.54027    0.537797    INPUT    WorkLifeBalance
+Attrition      1              3           0         237           1           4    2.658228    0.816453     -0.47299    -0.21011    INPUT    WorkLifeBalance
+_OVERALL_                     3           0        1470           1           4    2.761224    0.706476     -0.55248     0.41946    INPUT    WorkLifeBalance
+ 
+ 
+Data Role=TRAIN Variable=YearsAtCompany
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role         Label
+ 
+Attrition      0              6           0        1233           0          37    7.369019    6.096298     1.657958    3.353473    INPUT    YearsAtCompany
+Attrition      1              3           0         237           0          40    5.130802    5.949984     2.682244    9.608029    INPUT    YearsAtCompany
+_OVERALL_                     5           0        1470           0          40    7.008163    6.126525     1.764529    3.935509    INPUT    YearsAtCompany
+ 
+ 
+Data Role=TRAIN Variable=YearsInCurrentRole
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role           Label
+ 
+Attrition      0              3           0        1233           0          18    4.484185    3.649402      0.86072    0.390567    INPUT    YearsInCurrentRole
+Attrition      1              2           0         237           0          15    2.902954    3.174827      1.33536    1.567284    INPUT    YearsInCurrentRole
+_OVERALL_                     3           0        1470           0          18    4.229252    3.623137     0.917363    0.477421    INPUT    YearsInCurrentRole
+ 
+ 
+Data Role=TRAIN Variable=YearsSinceLastPromotion
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role              Label
+ 
+Attrition      0              1           0        1233           0          15    2.234388    3.234762      1.94671    3.430452    INPUT    YearsSinceLastPromotion
+Attrition      1              1           0         237           0          15    1.945148    3.153077     2.217563    4.861144    INPUT    YearsSinceLastPromotion
+_OVERALL_                     1           0        1470           0          15    2.187755     3.22243      1.98429    3.612673    INPUT    YearsSinceLastPromotion
+ 
+ 
+Data Role=TRAIN Variable=YearsWithCurrManager
+ 
+             Target                                 Non                                        Standard
+ Target      Level       Median     Missing     Missing     Minimum     Maximum        Mean    Deviation    Skewness    Kurtosis    Role            Label
+ 
+Attrition      0              3           0        1233           0          17    4.367397    3.594116     0.801229    0.139184    INPUT    YearsWithCurrManager
+Attrition      1              2           0         237           0          14    2.852321    3.143349      1.02985    0.263528    INPUT    YearsWithCurrManager
+_OVERALL_                     3           0        1470           0          17    4.123129    3.568136     0.833451    0.171058    INPUT    YearsWithCurrManager
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

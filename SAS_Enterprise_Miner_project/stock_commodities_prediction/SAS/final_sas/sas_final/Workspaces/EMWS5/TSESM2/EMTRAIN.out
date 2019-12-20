@@ -1,0 +1,22 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+ Role        Level         Count
+
+INPUT      INTERVAL          4    
+TARGET     INTERVAL          1    
+TIMEID     INTERVAL          1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+                                                                                                                                                   apply_
+                                                                                length                                                             start_
+Obs       name                   START                  END    timeinterval    OfCycle    label    timeformat                        role          end         timeformattype
+
+ 1     silverdate      Sun, 8 Nov 2015     Sun, 15 Dec 2019       DTWEEK          52               DTWKDATX17.0                      TIMEID        N              DATETIME   

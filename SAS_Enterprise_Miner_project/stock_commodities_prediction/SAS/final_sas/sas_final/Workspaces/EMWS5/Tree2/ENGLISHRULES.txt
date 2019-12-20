@@ -1,0 +1,32 @@
+*------------------------------------------------------------*
+ Node = 3
+*------------------------------------------------------------*
+if TotalWorkingYears >= 1.5 or MISSING
+then 
+ Tree Node Identifier   = 3
+ Number of Observations = 748
+ Predicted: Attrition=1 = 0.14
+ Predicted: Attrition=0 = 0.86
+ 
+*------------------------------------------------------------*
+ Node = 4
+*------------------------------------------------------------*
+if TotalWorkingYears < 1.5
+AND OverTime < 0.5
+then 
+ Tree Node Identifier   = 4
+ Number of Observations = 13
+ Predicted: Attrition=1 = 0.85
+ Predicted: Attrition=0 = 0.15
+ 
+*------------------------------------------------------------*
+ Node = 5
+*------------------------------------------------------------*
+if TotalWorkingYears < 1.5
+AND OverTime >= 0.5 or MISSING
+then 
+ Tree Node Identifier   = 5
+ Number of Observations = 30
+ Predicted: Attrition=1 = 0.47
+ Predicted: Attrition=0 = 0.53
+ 

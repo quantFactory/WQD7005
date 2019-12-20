@@ -1,0 +1,103 @@
+*------------------------------------------------------------*
+User:                ali
+Date:                December 08, 2019
+Time:                11:43:43
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+ Role        Level         Count
+ 
+TARGET     INTERVAL          1
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fit Statistics
+Model Selection based on Valid: Average Squared Error (_VASE_)
+ 
+                                             Valid:         Train:
+                                             Average       Average
+Selected    Model                            Squared       Squared
+ Model       Node     Model Description       Error          Error
+ 
+   Y        Tree10    Decision Tree (10)    0.010451    .008644000
+            Reg5      Regression (5)        0.010664    .006842434
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fit Statistics Table
+Target: stockprice
+ 
+Data Role=Train
+ 
+Statistics                                            Tree10        Reg5
+ 
+Train: Akaike's Information Criterion                  .        -85.6922
+Train: Average Squared Error                          0.0086      0.0068
+Train: Average Error Function                          .          0.0068
+Selection Criterion: Valid: Average Squared Error     0.0105      0.0107
+Train: Degrees of Freedom for Error                    .         13.0000
+Train: Model Degrees of Freedom                        .          7.0000
+Train: Total Degrees of Freedom                      20.0000     20.0000
+Train: Divisor for ASE                               20.0000     20.0000
+Train: Error Function                                  .          0.1368
+Train: Final Prediction Error                          .          0.0142
+Train: Maximum Absolute Error                         0.1660      0.1545
+Train: Mean Square Error                               .          0.0105
+Train: Sum of Frequencies                            20.0000     20.0000
+Train: Number of Estimate Weights                      .          7.0000
+Train: Root Average Squared Error                     0.0930      0.0827
+Train: Root Final Prediction Error                     .          0.1192
+Train: Root Mean Squared Error                         .          0.1026
+Train: Schwarz's Bayesian Criterion                    .        -78.7221
+Train: Sum of Squared Errors                          0.1729      0.1368
+Train: Sum of Case Weights Times Freq                  .         20.0000
+ 
+ 
+Data Role=Valid
+ 
+Statistics                                Tree10      Reg5
+ 
+Valid: Average Squared Error             0.01045    0.01066
+Valid: Average Error Function             .         0.01066
+Valid: Divisor for VASE                  8.00000    8.00000
+Valid: Error Function                     .         0.08531
+Valid: Maximum Absolute Error            0.16600    0.14882
+Valid: Mean Square Error                  .         0.01066
+Valid: Sum of Frequencies                8.00000    8.00000
+Valid: Root Average Squared Error        0.10223    0.10327
+Valid: Root Mean Square Error             .         0.10327
+Valid: Sum of Squared Errors             0.08361    0.08531
+Valid: Sum of Case Weights Times Freq     .         8.00000
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

@@ -1,0 +1,13 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Replacement Counts
+
+Obs    Variable        Label           Role     Train
+
+ 1     gasprice        gasprice        INPUT      0  
+ 2     goldprice       goldprice       INPUT      0  
+ 3     newspolarity    newspolarity    INPUT      0  
+ 4     oilprice        oilprice        INPUT      0  
+ 5     silverprice     silverprice     INPUT      0  

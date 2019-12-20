@@ -1,0 +1,257 @@
+*------------------------------------------------------------*
+User:                ali
+Date:                December 19, 2019
+Time:                16:53:01
+Site:                12601940
+Platform:            W32_8PRO
+Maintenance Release: 9.04.01M3P062415
+EM Version:          14.1
+* 
+*------------------------------------------------------------*
+* Training Log
+Date:                December 19, 2019
+Time:                16:53:00
+*------------------------------------------------------------*
+10869  proc freq data=EMWS5.Trans_VariableSet noprint;
+10870  table ROLE*LEVEL/out=WORK.TransMETA;
+10871  run;
+ 
+NOTE: There were 32 observations read from the data set EMWS5.TRANS_VARIABLESET.
+NOTE: The data set WORK.TRANSMETA has 2 observations and 4 variables.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+ 
+ 
+10872  proc print data=WORK.TransMETA label noobs;
+10873  var ROLE LEVEL COUNT;
+10874  label ROLE = "%sysfunc(sasmsg(sashelp.dmine, meta_role_vlabel, NOQUOTE))" LEVEL = "%sysfunc(sasmsg(sashelp.dmine, meta_level_vlabel, NOQUOTE))" COUNT = "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))";
+10875  title9 ' ';
+10876  title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_varSummary_title  , NOQUOTE))";
+10877  run;
+ 
+NOTE: There were 2 observations read from the data set WORK.TRANSMETA.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+ 
+ 
+10878  title10;
+ 
+10879  data WORK.M1WCIRL5;
+10880  set WORK.M1WCIRL5;
+10881  if (METHOD='NONE' and ROLE ne 'FREQ') or (role = 'REJECTED' and METHOD = 'DEFAULT') then delete;
+10882  run;
+ 
+NOTE: There were 32 observations read from the data set WORK.M1WCIRL5.
+NOTE: The data set WORK.M1WCIRL5 has 32 observations and 22 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+ 
+ 
+10947  *------------------------------------------------------------*;
+10948  * Trans: Computing Summary Statistics;
+10949  *------------------------------------------------------------*;
+10950  data WORK.M0W5K72K;
+10951  set WORK.M0W5K72K;
+10952  if (role = 'REJECTED') then role = 'INPUT';
+10953  run;
+ 
+NOTE: There were 32 observations read from the data set WORK.M0W5K72K.
+NOTE: The data set WORK.M0W5K72K has 32 observations and 22 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+ 
+ 
+10954  *------------------------------------------------------------* ;
+10955  * EM: DMDBClass Macro ;
+10956  *------------------------------------------------------------* ;
+10957  %macro DMDBClass;
+10958      Attrition(DESC)
+10959  %mend DMDBClass;
+10960  *------------------------------------------------------------* ;
+10961  * EM: DMDBVar Macro ;
+10962  *------------------------------------------------------------* ;
+10963  %macro DMDBVar;
+10964      Age BusinessTravel DailyRate Department DistanceFromHome Education
+10965     EducationFiled EmployeeNumber EnvironmentSatisfaction Gender HourlyRate
+10966     JobInvolvement JobLevel JobRole JobSatisfaction MartialStatus MonthlyIncome
+10967     MonthlyRate NumCompaniesWorked OverTime PercentSalaryHike PerformanceRating
+10968     RelationshipSatisfaction StockOptionLevel TotalWorkingYears
+10969     TrainingTimesLastYear WorkLifeBalance YearsAtCompany YearsInCurrentRole
+10970     YearsSinceLastPromotion YearsWithCurrManager
+10971  %mend DMDBVar;
+10972  *------------------------------------------------------------*;
+10973  * EM: Create DMDB;
+10974  *------------------------------------------------------------*;
+10975  proc dmdb batch data=EMWS5.Part_TRAIN
+10976  dmdbcat=WORK.EM_DMDB
+10977  classout=WORK.Transclassout
+10978  maxlevel = 513
+10979  ;
+10980  class %DMDBClass;
+10981  var %DMDBVar;
+10982  target
+10983  Attrition
+10984  ;
+10985  run;
+ 
+NOTE: Records processed = 791   Memory used = 511K.
+NOTE: There were 791 observations read from the data set EMWS5.PART_TRAIN.
+NOTE: The data set WORK.TRANSCLASSOUT has 2 observations and 9 variables.
+NOTE: PROCEDURE DMDB used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+ 
+ 
+10986  quit;
+10987  *--- end code ---*;
+ 
+10988  data WORK.TransINTERVALMETA;
+10989  set WORK.M1WCIRL5;
+10990  if LEVEL ne 'INTERVAL' then delete;
+10991  run;
+ 
+NOTE: There were 32 observations read from the data set WORK.M1WCIRL5.
+NOTE: The data set WORK.TRANSINTERVALMETA has 31 observations and 22 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+10992  *------------------------------------------------------------*;
+10993  * Trans: Determining Variables to Scale;
+10994  *------------------------------------------------------------*;
+10995  data WORK.M2FTSAVG;
+10996  set WORK.M2FTSAVG;
+10997  where (TYPE="N" and (METHOD in("MAX_NORM", "MAX_CORR", "EQUALIZE", "OP_MAX_NORM", "OP_EQUALIZE"))) or (ROLE eq "FREQ");
+10998  run;
+ 
+NOTE: There were 0 observations read from the data set WORK.M2FTSAVG.
+      WHERE ((TYPE='N') and METHOD in ('EQUALIZE', 'MAX_CORR', 'MAX_NORM', 'OP_EQUALIZE', 'OP_MAX_NORM')) or (ROLE='FREQ');
+NOTE: The data set WORK.M2FTSAVG has 0 observations and 22 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+11001  %exploreSample(DATA=EMWS5.Part_TRAIN, OUTPUT=EMWS5.Trans_SAMPLE_DATA, METADATA=EMWS5.Part_CMeta_TRAIN, VARS=, METHOD=FIRSTN, SIZE=DEFAULT, ALPHA=0.01, PVALUE=0.01, SEED=12345);
+NOTE: Fileref X has been deassigned.
+NOTE: EXPLOREOBS EMWS5.Part_TRAIN : vars= 36 : recl= 288 : max=20000 : def= 2000
+PERFORMANCE  DETAILS
+*------------------------------------------------------------*
+* FirstN/Top sample
+*------------------------------------------------------------*
+ 
+NOTE: There were 791 observations read from the data set EMWS5.PART_TRAIN.
+NOTE: The data set EMWS5.TRANS_SAMPLE_DATA has 791 observations and 36 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+ 
+*------------------------------------------------------------*
+* Score Log
+Date:                December 19, 2019
+Time:                16:53:00
+*------------------------------------------------------------*
+11279  *------------------------------------------------------------*;
+11280  * Trans: Scoring DATA data;
+11281  *------------------------------------------------------------*;
+11282  data EMWS5.Trans_TRAIN
+11283  / view=EMWS5.Trans_TRAIN
+11284  ;
+11285  set EMWS5.Part_TRAIN
+11286  ;
+11287  run;
+ 
+NOTE: DATA STEP view saved on file EMWS5.TRANS_TRAIN.
+NOTE: A stored DATA STEP view cannot run under a different operating system.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+11288  quit;
+ 
+11289  *------------------------------------------------------------*;
+11290  * Trans: Scoring VALIDATE data;
+11291  *------------------------------------------------------------*;
+11292  data EMWS5.Trans_VALIDATE
+11293  / view=EMWS5.Trans_VALIDATE
+11294  ;
+11295  set EMWS5.Part_VALIDATE
+11296  ;
+11297  run;
+ 
+NOTE: DATA STEP view saved on file EMWS5.TRANS_VALIDATE.
+NOTE: A stored DATA STEP view cannot run under a different operating system.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+11298  quit;
+ 
+11299  *------------------------------------------------------------*;
+11300  * Trans: Scoring TEST data;
+11301  *------------------------------------------------------------*;
+11302  data EMWS5.Trans_TEST
+11303  / view=EMWS5.Trans_TEST
+11304  ;
+11305  set EMWS5.Part_TEST
+11306  ;
+11307  run;
+ 
+NOTE: DATA STEP view saved on file EMWS5.TRANS_TEST.
+NOTE: A stored DATA STEP view cannot run under a different operating system.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+ 
+ 
+11308  quit;
+ 
+11309  *------------------------------------------------------------*;
+11310  * Trans: Computing metadata for TRAIN data;
+11311  *------------------------------------------------------------*;
+ 
+NOTE: View EMWS5.TRANS_TRAIN.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+ 
+NOTE: View EMWS5.TRANS_TRAIN.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+ 
+NOTE: View EMWS5.TRANS_VALIDATE.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+ 
+NOTE: View EMWS5.TRANS_TEST.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+ 
+*------------------------------------------------------------*
+* Report Log
+Date:                December 19, 2019
+Time:                16:53:01
+*------------------------------------------------------------*
+11666  data EMWS5.Trans_EMSCOREVAR;
+11667  length Name $32 formula $300 file $200;
+11668  keep NAME Formula file;
+11669  run;
+ 
+NOTE: Variable Name is uninitialized.
+NOTE: Variable formula is uninitialized.
+NOTE: Variable file is uninitialized.
+NOTE: The data set EMWS5.TRANS_EMSCOREVAR has 1 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+ 
+ 

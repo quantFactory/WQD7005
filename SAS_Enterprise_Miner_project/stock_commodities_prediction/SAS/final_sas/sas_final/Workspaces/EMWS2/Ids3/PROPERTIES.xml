@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="petronas" Scope="LOCAL" Role="RAW" Library="MILD5" Table="PETRONAS" NCols="8"
+ NObs="28" NBytes="66560" Segment="" DataSourceRole="RAW" OutputType="VIEW" ForceRun="N"
+ ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="petronas"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="amir_" DsCreateDate="1873043643.9"
+ DsModifiedBy="amir_" DsModifyDate="1873043644" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
+ Component="DataSource" RawCreateTime="1873044033.4" CreateTime="09MAY2019:18:00:33"
+ Description="" Data="MILD5.PETRONAS" CMeta="WORK.M3EDQ2VQ" RunId="0f936aac-fbcb-4e57-8fca-0001b1b92cc4"
+>
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

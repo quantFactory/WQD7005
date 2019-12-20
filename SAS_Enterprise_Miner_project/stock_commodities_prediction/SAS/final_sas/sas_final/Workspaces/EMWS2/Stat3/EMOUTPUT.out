@@ -1,0 +1,74 @@
+*------------------------------------------------------------*
+User:                amir_
+Date:                May 09, 2019
+Time:                18:19:56
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+ Role        Level         Count
+ 
+INPUT      INTERVAL          5
+INPUT      NOMINAL           1
+TARGET     INTERVAL          1
+ 
+ 
+ 
+Class Variable Summary Statistics
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN
+ 
+                                  Number
+Data       Variable                 of                                Mode                     Mode2
+Role         Name        Role     Levels    Missing      Mode      Percentage     Mode2      Percentage
+ 
+TRAIN    polarity_cat    INPUT       2         0       positive      78.57       negative      21.43
+ 
+ 
+ 
+Interval Variable Summary Statistics
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN
+ 
+                                      Standard          Non
+Variable         Role         Mean    Deviation     Missing     Missing     Minimum      Median     Maximum    Skewness    Kurtosis
+ 
+gasprice        INPUT     2.597357    0.081376           28           0       2.455        2.59       2.708    -0.23651    -1.28026
+goldprice       INPUT       14.973    0.148864           28           0      14.607      14.965      15.244     -0.4656    0.811837
+newspolarity    INPUT     0.362453    0.348984           28           0      -0.075    0.277601    1.043264    0.458482    -0.89442
+oilprice        INPUT       71.595    1.520922           28           0       69.01       71.62       74.57    0.347516    -0.12055
+silverprice     INPUT     14.97293    0.149046           28           0      14.605      14.965      15.244    -0.47208    0.827451
+stockprice      TARGET    6.644643    0.088631           28           0        6.53        6.61        6.81    0.811662    -0.58404
+ 
+ 
+ 
+Correlation Statistics
+(maximum 500 observations printed)
+ 
+Data Role=TRAIN Type=PEARSON Target=stockprice
+ 
+Input           Correlation
+ 
+oilprice           0.36601
+newspolarity      -0.13772
+gasprice          -0.22274
+goldprice         -0.53992
+silverprice       -0.54019
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*

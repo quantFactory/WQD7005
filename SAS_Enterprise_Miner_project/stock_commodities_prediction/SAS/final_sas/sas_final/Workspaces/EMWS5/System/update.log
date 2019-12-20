@@ -1,0 +1,496 @@
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+1 
+Traverser: Traverser invoked.  MPCONNECT command is sas. 
+Traverser: Beginning flow traversal 
+*------------------------------------------------------------* 
+* 
+* Ids7 : Beginning Update 
+* datetime : 19DEC2019:16:42:13 
+* 
+*------------------------------------------------------------* 
+85047      %let _HPDMGRIDHOST=;
+85048      %let _HPDMGRIDINSTALLLOC=;
+85049      %let _HPDMGRIDDATASERVER=;
+85050      %hpdm_gridSetOPtions;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+*------------------------------------------------------------* 
+* 
+* Ids7 : End Update 
+* datetime : 19DEC2019:16:42:13 
+* 
+*------------------------------------------------------------* 
+Traverser: WaitingNode "PART" 
+Traverser: WaitingNode "AUTONEURAL" 
+Traverser: WaitingNode "NEURAL" 
+traverser_readyNode_note 
+*------------------------------------------------------------* 
+* 
+* Stat : Beginning Update 
+* datetime : 19DEC2019:16:42:14 
+* 
+*------------------------------------------------------------* 
+85070      *------------------------------------------------------------*;
+85071      * Stat: Update Variables Set;
+85072      *------------------------------------------------------------*;
+
+85073      proc sort data=EMWS5.Ids7_CMeta_DATA out=_SortedVar;
+85074      by name;
+85075      run;
+
+NOTE: There were 35 observations read from the data set EMWS5.IDS7_CMETA_DATA.
+NOTE: The data set WORK._SORTEDVAR has 35 observations and 20 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85080      proc sort data=EMWS5.Stat_VariableSet;
+85081      by name;
+85082      run;
+
+NOTE: There were 35 observations read from the data set EMWS5.STAT_VARIABLESET.
+NOTE: The data set EMWS5.STAT_VARIABLESET has 35 observations and 21 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85083      data EMWS5.Stat_VariableSet;
+85084      merge _SortedVar(in=_a) EMWS5.Stat_VariableSet(in=_b rename=(ROLE = OLDROLE) keep=NAME ROLE USE REPORT);
+85085      by name;
+85086      if (OLDROLE = 'TARGET' and use = 'Y') and ROLE = 'REJECTED' then USE = 'D';
+85087      drop OLDROLE;
+85088      if _b and ^_a then delete;
+85089      run;
+
+NOTE: There were 35 observations read from the data set WORK._SORTEDVAR.
+NOTE: There were 35 observations read from the data set EMWS5.STAT_VARIABLESET.
+NOTE: The data set EMWS5.STAT_VARIABLESET has 35 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+85090      * Stat: End of Update Variables Set;
+85091      *------------------------------------------------------------*;
+
+85092      *------------------------------------------------------------*;
+85093      * Stat: Computing metadata for TRAIN data;
+85094      *------------------------------------------------------------*;
+
+85473      %let _HPDMGRIDHOST=;
+85474      %let _HPDMGRIDINSTALLLOC=;
+85475      %let _HPDMGRIDDATASERVER=;
+85476      %hpdm_gridSetOPtions;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+*------------------------------------------------------------* 
+* 
+* Stat : End Update 
+* datetime : 19DEC2019:16:42:14 
+* 
+*------------------------------------------------------------* 
+Traverser: WaitingNode "AUTONEURAL" 
+Traverser: WaitingNode "NEURAL" 
+traverser_readyNode_note 
+*------------------------------------------------------------* 
+* 
+* Part : Beginning Update 
+* datetime : 19DEC2019:16:42:15 
+* 
+*------------------------------------------------------------* 
+85494      *------------------------------------------------------------*;
+85495      * Part: Update Variables Set;
+85496      *------------------------------------------------------------*;
+
+85497      proc sort data=EMWS5.Stat_CMeta_TRAIN out=_SortedVar;
+85498      by name;
+85499      run;
+
+NOTE: There were 35 observations read from the data set EMWS5.STAT_CMETA_TRAIN.
+NOTE: The data set WORK._SORTEDVAR has 35 observations and 20 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+85500      proc sort data=EMWS5.Part_VariableSet;
+85501      by name;
+85502      run;
+
+NOTE: There were 35 observations read from the data set EMWS5.PART_VARIABLESET.
+NOTE: The data set EMWS5.PART_VARIABLESET has 35 observations and 21 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85503      data EMWS5.Part_VariableSet;
+85504      merge _SortedVar(in=_a) EMWS5.Part_VariableSet(in=_b rename=(ROLE = OLDROLE) keep=NAME ROLE PARTITIONROLE);
+85505      by name;
+85506      drop OLDROLE;
+85507      if _b and ^_a then delete;
+85508      run;
+
+NOTE: There were 35 observations read from the data set WORK._SORTEDVAR.
+NOTE: There were 35 observations read from the data set EMWS5.PART_VARIABLESET.
+NOTE: The data set EMWS5.PART_VARIABLESET has 35 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+85509      * Part: End of Update Variables Set;
+85510      *------------------------------------------------------------*;
+
+85511      *------------------------------------------------------------*;
+85512      * Part: Computing metadata for TRAIN data;
+85513      *------------------------------------------------------------*;
+
+85861      %let _HPDMGRIDHOST=;
+85862      %let _HPDMGRIDINSTALLLOC=;
+85863      %let _HPDMGRIDDATASERVER=;
+85864      %hpdm_gridSetOPtions;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+*------------------------------------------------------------* 
+* 
+* Part : End Update 
+* datetime : 19DEC2019:16:42:15 
+* 
+*------------------------------------------------------------* 
+Traverser: WaitingNode "NEURAL" 
+traverser_readyNode_note 
+*------------------------------------------------------------* 
+* 
+* AutoNeural : Beginning Update 
+* datetime : 19DEC2019:16:42:16 
+* 
+*------------------------------------------------------------* 
+85883      data _null_;
+85884      set EMWS5.Part_CMeta_TRAIN (obs=1);
+85885      run;
+
+NOTE: There were 1 observations read from the data set EMWS5.PART_CMETA_TRAIN.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85886      data _null_;
+85887      set EMWS5.Part_CMeta_TRAIN (obs=1);
+85888      run;
+
+NOTE: There were 1 observations read from the data set EMWS5.PART_CMETA_TRAIN.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85889      data _null_;
+85890      set EMWS5.Part_CMeta_TRAIN (obs=1);
+85891      run;
+
+NOTE: There were 1 observations read from the data set EMWS5.PART_CMETA_TRAIN.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85892      *------------------------------------------------------------*;
+85893      * AutoNeural: Update Variables Set;
+85894      *------------------------------------------------------------*;
+
+85895      data EMWS5.AutoNeural_VariableSet;
+85896      length USE $1;
+85897      label USE = "Use";
+85898      length REPORT $1;
+85899      label REPORT = "Report";
+85900      set EMWS5.Part_CMeta_TRAIN;
+85901      where((ROLE="TARGET" and LEVEL ne "UNARY") or ROLE in("INPUT" "REJECTED" "FREQ"));
+85902      run;
+
+NOTE: Variable USE is uninitialized.
+NOTE: There were 35 observations read from the data set EMWS5.PART_CMETA_TRAIN.
+      WHERE ((ROLE='TARGET') and (LEVEL not = 'UNARY')) or ROLE in ('FREQ', 'INPUT', 'REJECTED');
+NOTE: The data set EMWS5.AUTONEURAL_VARIABLESET has 35 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+85903      * AutoNeural: End of Update Variables Set;
+85904      *------------------------------------------------------------*;
+
+85905      *------------------------------------------------------------*;
+85906      * AutoNeural: Computing metadata for TRAIN data;
+85907      *------------------------------------------------------------*;
+
+85918      data EMWS5.AutoNeural_EMINFO;
+85919      length TARGET KEY $32 DATA $43;
+85920      input TARGET KEY DATA $;
+85921      cards;
+
+NOTE: The data set EMWS5.AUTONEURAL_EMINFO has 1 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85923      run;
+85924      proc sort data = EMWS5.AutoNeural_EMINFO NOTHREADS;
+85925      by TARGET KEY;
+85926      run;
+
+NOTE: There were 1 observations read from the data set EMWS5.AUTONEURAL_EMINFO.
+NOTE: The data set EMWS5.AUTONEURAL_EMINFO has 1 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+85927      proc sort data = EMWS5.Ids7_EMINFO OUT=WORK.SORTEDEMINFO NOTHREADS;
+85928      by TARGET KEY;
+85929      run;
+
+NOTE: There were 1 observations read from the data set EMWS5.IDS7_EMINFO.
+NOTE: The data set WORK.SORTEDEMINFO has 1 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85930      proc sort data = EMWS5.AutoNeural_EMINFO OUT=WORK.TEMP_INFO NOTHREADS;
+85931      by TARGET KEY;
+85932      run;
+
+NOTE: Input data set is already sorted; it has been copied to the output data set.
+NOTE: There were 1 observations read from the data set EMWS5.AUTONEURAL_EMINFO.
+NOTE: The data set WORK.TEMP_INFO has 1 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85933      data EMWS5.AutoNeural_EMINFO;
+85934      merge WORK.SORTEDEMINFO WORK.TEMP_INFO;
+85935      by TARGET KEY;
+85936      run;
+
+NOTE: There were 1 observations read from the data set WORK.SORTEDEMINFO.
+NOTE: There were 1 observations read from the data set WORK.TEMP_INFO.
+NOTE: The data set EMWS5.AUTONEURAL_EMINFO has 2 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+85937      proc datasets lib=work nolist;
+85938      delete TEMP_INFO SORTEDEMINFO;
+85939      run;
+
+NOTE: Deleting WORK.TEMP_INFO (memtype=DATA).
+NOTE: Deleting WORK.SORTEDEMINFO (memtype=DATA).
+85940      quit;
+
+NOTE: PROCEDURE DATASETS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85942      %let _HPDMGRIDHOST=;
+85943      %let _HPDMGRIDINSTALLLOC=;
+85944      %let _HPDMGRIDDATASERVER=;
+85945      %hpdm_gridSetOPtions;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+*------------------------------------------------------------* 
+* 
+* AutoNeural : End Update 
+* datetime : 19DEC2019:16:42:16 
+* 
+*------------------------------------------------------------* 
+traverser_readyNode_note 
+*------------------------------------------------------------* 
+* 
+* Neural : Beginning Update 
+* datetime : 19DEC2019:16:42:16 
+* 
+*------------------------------------------------------------* 
+85964      data _null_;
+85965      set EMWS5.AutoNeural_CMeta_TRAIN (obs=1);
+85966      run;
+
+NOTE: There were 1 observations read from the data set EMWS5.AUTONEURAL_CMETA_TRAIN.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+85967      data _null_;
+85968      set EMWS5.AutoNeural_CMeta_TRAIN (obs=1);
+85969      run;
+
+NOTE: There were 1 observations read from the data set EMWS5.AUTONEURAL_CMETA_TRAIN.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85970      data _null_;
+85971      set EMWS5.AutoNeural_CMeta_TRAIN (obs=1);
+85972      run;
+
+NOTE: There were 1 observations read from the data set EMWS5.AUTONEURAL_CMETA_TRAIN.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85973      *------------------------------------------------------------*;
+85974      * Neural: Update Variables Set;
+85975      *------------------------------------------------------------*;
+
+85976      data EMWS5.Neural_VariableSet;
+85977      length USE $1;
+85978      label USE = "Use";
+85979      length REPORT $1;
+85980      label REPORT = "Report";
+85981      set EMWS5.AutoNeural_CMeta_TRAIN;
+85982      where((ROLE="TARGET" and LEVEL ne "UNARY") or ROLE in("INPUT" "REJECTED" "FREQ"));
+85983      run;
+
+NOTE: Variable USE is uninitialized.
+NOTE: There were 35 observations read from the data set EMWS5.AUTONEURAL_CMETA_TRAIN.
+      WHERE ((ROLE='TARGET') and (LEVEL not = 'UNARY')) or ROLE in ('FREQ', 'INPUT', 'REJECTED');
+NOTE: The data set EMWS5.NEURAL_VARIABLESET has 35 observations and 22 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85984      * Neural: End of Update Variables Set;
+85985      *------------------------------------------------------------*;
+
+85986      *------------------------------------------------------------*;
+85987      * Neural: Computing metadata for TRAIN data;
+85988      *------------------------------------------------------------*;
+
+85999      data EMWS5.Neural_EMINFO;
+86000      length TARGET KEY $32 DATA $43;
+86001      input TARGET KEY DATA $;
+86002      cards;
+
+NOTE: The data set EMWS5.NEURAL_EMINFO has 1 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+86004      run;
+86005      proc sort data = EMWS5.Neural_EMINFO NOTHREADS;
+86006      by TARGET KEY;
+86007      run;
+
+NOTE: There were 1 observations read from the data set EMWS5.NEURAL_EMINFO.
+NOTE: The data set EMWS5.NEURAL_EMINFO has 1 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+86008      proc sort data = EMWS5.AutoNeural_EMINFO OUT=WORK.SORTEDEMINFO NOTHREADS;
+86009      by TARGET KEY;
+86010      run;
+
+NOTE: There were 2 observations read from the data set EMWS5.AUTONEURAL_EMINFO.
+NOTE: The data set WORK.SORTEDEMINFO has 2 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+86011      proc sort data = EMWS5.Neural_EMINFO OUT=WORK.TEMP_INFO NOTHREADS;
+86012      by TARGET KEY;
+86013      run;
+
+NOTE: Input data set is already sorted; it has been copied to the output data set.
+NOTE: There were 1 observations read from the data set EMWS5.NEURAL_EMINFO.
+NOTE: The data set WORK.TEMP_INFO has 1 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+86014      data EMWS5.Neural_EMINFO;
+86015      merge WORK.SORTEDEMINFO WORK.TEMP_INFO;
+86016      by TARGET KEY;
+86017      run;
+
+NOTE: There were 2 observations read from the data set WORK.SORTEDEMINFO.
+NOTE: There were 1 observations read from the data set WORK.TEMP_INFO.
+NOTE: The data set EMWS5.NEURAL_EMINFO has 2 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+86018      proc datasets lib=work nolist;
+86019      delete TEMP_INFO SORTEDEMINFO;
+86020      run;
+
+NOTE: Deleting WORK.TEMP_INFO (memtype=DATA).
+NOTE: Deleting WORK.SORTEDEMINFO (memtype=DATA).
+86021      quit;
+
+NOTE: PROCEDURE DATASETS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+86023      %let _HPDMGRIDHOST=;
+86024      %let _HPDMGRIDINSTALLLOC=;
+86025      %let _HPDMGRIDDATASERVER=;
+86026      %hpdm_gridSetOPtions;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+*------------------------------------------------------------* 
+* 
+* Neural : End Update 
+* datetime : 19DEC2019:16:42:16 
+* 
+*------------------------------------------------------------* 
+Traverser: Run Completed 
+86027      proc printto;
+86028      run;
+

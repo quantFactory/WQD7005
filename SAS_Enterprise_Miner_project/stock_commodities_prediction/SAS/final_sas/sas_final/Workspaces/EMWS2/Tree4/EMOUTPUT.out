@@ -1,0 +1,128 @@
+*------------------------------------------------------------*
+User:                amir_
+Date:                May 09, 2019
+Time:                18:20:46
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+Role         Level         Count
+ 
+ID         INTERVAL          1
+INPUT      INTERVAL          5
+INPUT      NOMINAL           1
+TARGET     INTERVAL          1
+TIMEID     INTERVAL          1
+ 
+ 
+ 
+ 
+Predicted and decision variables
+ 
+Type           Variable              Label
+ 
+TARGET       stockprice
+PREDICTED    P_stockprice    Predicted: stockprice
+RESIDUAL     R_stockprice    Residual: stockprice
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+Variable Importance
+ 
+                                                                                                               Ratio of
+                     Number of                       Number of                                               Validation
+Variable             Splitting                        Rules in           Relative         Validation        to Training
+  Name      Label      Rules           Importance     CV Trees         Importance         Importance         Importance
+ 
+oilprice                 2                 1.0000        38                1.0000             1.0000             1.0000
+ 
+ 
+ 
+Tree Leaf Report
+ 
+Node               Training      Training    Validation    Training
+ Id     Depth    Observations     Average      Average     Root ASE
+ 
+  3       1            9           2.89           0        0.040123
+  5       2            6           3.04           0        0.024495
+  4       2            5           3.10           0        0.038678
+ 
+ 
+ 
+ 
+Fit Statistics
+ 
+Target=stockprice Target Label=' '
+ 
+   Fit
+Statistics    Statistics Label               Train     Validation
+ 
+  _NOBS_      Sum of Frequencies            20.0000      8.00000
+  _MAX_       Maximum Absolute Error         0.0889      0.19200
+  _SSE_       Sum of Squared Errors          0.0256      0.05308
+  _ASE_       Average Squared Error          0.0013      0.00664
+  _RASE_      Root Average Squared Error     0.0358      0.08146
+  _DIV_       Divisor for ASE               20.0000      8.00000
+  _DFT_       Total Degrees of Freedom      20.0000       .
+ 
+ 
+ 
+ 
+Assessment Score Rankings
+ 
+Data Role=TRAIN Target Variable=stockprice Target Label=' '
+ 
+           Number of       Mean        Mean
+Depth    Observations     Target    Predicted
+ 
+   5           5         3.10200     3.10200
+  30           6         3.04000     3.04000
+  60           9         2.89111     2.89111
+ 
+ 
+Data Role=VALIDATE Target Variable=stockprice Target Label=' '
+ 
+           Number of       Mean        Mean
+Depth    Observations     Target    Predicted
+ 
+   5           5         3.05600     3.10200
+  65           3         2.92333     2.89111
+ 
+ 
+ 
+ 
+Assessment Score Distribution
+ 
+Data Role=TRAIN Target Variable=stockprice Target Label=' '
+ 
+  Range for         Mean        Mean        Number of      Model
+  Predicted        Target    Predicted    Observations     Score
+ 
+3.091 -  3.102    3.10200     3.10200           5         3.09673
+3.039 -  3.049    3.04000     3.04000           6         3.04401
+2.891 -  2.902    2.89111     2.89111           9         2.89638
+ 
+ 
+Data Role=VALIDATE Target Variable=stockprice Target Label=' '
+ 
+  Range for         Mean        Mean        Number of      Model
+  Predicted        Target    Predicted    Observations     Score
+ 
+3.091 -  3.102    3.05600     3.10200           5         3.09673
+2.891 -  2.902    2.92333     2.89111           3         2.89638

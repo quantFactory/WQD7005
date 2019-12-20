@@ -1,0 +1,40 @@
+*------------------------------------------------------------*
+* Score Log
+Date:                December 19, 2019
+Time:                16:52:52
+*------------------------------------------------------------*
+11619  *------------------------------------------------------------*;
+11620  * Stat: Scoring DATA data;
+11621  *------------------------------------------------------------*;
+11622  data EMWS5.Stat_TRAIN
+11623  / view=EMWS5.Stat_TRAIN
+11624  ;
+11625  set EMWS5.Ids7_DATA
+11626  ;
+11627  run;
+
+NOTE: DATA STEP view saved on file EMWS5.STAT_TRAIN.
+NOTE: A stored DATA STEP view cannot run under a different operating system.
+NOTE: View EMWS5.IDS7_DATA.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+      
+
+11628  quit;
+
+11629  *------------------------------------------------------------*;
+11630  * Stat: Computing metadata for TRAIN data;
+11631  *------------------------------------------------------------*;
+
+NOTE: View EMWS5.STAT_TRAIN.VIEW used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.04 seconds
+      
+NOTE: View EMWS5.STAT_TRAIN.VIEW used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.04 seconds
+      

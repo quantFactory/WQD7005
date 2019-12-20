@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  DataSource="gamuda" Scope="LOCAL" Role="RAW" Library="MILD5" Table="GAMUDA" NCols="8"
+ NObs="28" NBytes="66560" Segment="" DataSourceRole="RAW" OutputType="VIEW" ForceRun="N"
+ ComputeStatistics="N" DataSelection="DATASOURCE" NewTable="" MetaAdvisor="BASIC"
+ ApplyIntervalLevelLowerLimit="Y" IntervalLowerLimit="20" ApplyMaxPercentMissing="Y"
+ MaxPercentMissing="50" ApplyMaxClassLevels="Y" MaxClassLevels="20" IdentifyEmptyColumns="Y"
+ VariableValidation="STRICT" NewVariableRole="REJECT" DropMapVariables="Y" DsId="gamuda"
+ DsSampleName="" DsSampleSizeType="" DsSampleSize="" DsCreatedBy="amir_" DsCreateDate="1873043575.4"
+ DsModifiedBy="amir_" DsModifyDate="1873043575.4" DsScope="LOCAL" Sample="D" SampleSizeType="PERCENT"
+ SampleSizePercent="20" SampleSizeObs="10000" DBPassThrough="Y" RunAction="Train"
+ Component="DataSource" RawCreateTime="1873044029.1" CreateTime="09MAY2019:18:00:29"
+ Description="" Data="MILD5.GAMUDA" CMeta="WORK.M38R8OHN" RunId="14643246-f890-4361-908a-5de4587b6a76"
+ RawLastTimeRun="1873045142.1" RawRunTime="3.4680001736" LastTimeRun="09MAY2019:18:19:02"
+ RunTime="0 Hr. 0 Min. 3.47 Sec.">
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES/>
+</_ROOT_>

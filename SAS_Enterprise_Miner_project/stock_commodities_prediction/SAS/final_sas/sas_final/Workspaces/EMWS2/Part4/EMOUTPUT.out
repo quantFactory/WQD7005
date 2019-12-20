@@ -1,0 +1,70 @@
+*------------------------------------------------------------*
+User:                amir_
+Date:                May 09, 2019
+Time:                18:20:40
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+ Role        Level         Count
+ 
+INPUT      INTERVAL          5
+INPUT      NOMINAL           1
+TARGET     INTERVAL          1
+TIMEID     INTERVAL          1
+ 
+ 
+ 
+ 
+Partition Summary
+ 
+                                      Number of
+Type              Data Set          Observations
+ 
+DATA        EMWS2.Stat4_TRAIN            28
+TRAIN       EMWS2.Part4_TRAIN            20
+VALIDATE    EMWS2.Part4_VALIDATE          8
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Summary Statistics for Interval Targets
+ 
+Data=DATA
+ 
+                                             Number of                 Standard
+ Variable     Maximum    Mean    Minimum    Observations    Missing    Deviation    Label
+ 
+stockprice     3.17      2.99     2.83            28           0          0.1
+ 
+ 
+Data=TRAIN
+ 
+                                             Number of                 Standard
+ Variable     Maximum    Mean    Minimum    Observations    Missing    Deviation    Label
+ 
+stockprice     3.17      2.99     2.83            20           0          0.1
+ 
+ 
+Data=VALIDATE
+ 
+                                             Number of                 Standard
+ Variable     Maximum    Mean    Minimum    Observations    Missing    Deviation    Label
+ 
+stockprice     3.14      3.01     2.88             8           0          0.1

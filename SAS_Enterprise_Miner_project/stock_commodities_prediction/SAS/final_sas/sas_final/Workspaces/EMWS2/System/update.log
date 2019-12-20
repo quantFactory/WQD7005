@@ -1,0 +1,93 @@
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+1 
+Traverser: Traverser invoked.  MPCONNECT command is sas. 
+Traverser: Beginning flow traversal 
+*------------------------------------------------------------* 
+* 
+* Ids6 : Beginning Update 
+* datetime : 08DEC2019:09:54:13 
+* 
+*------------------------------------------------------------* 
+143111     *------------------------------------------------------------*;
+143112     * Ids6: Update Variables Set;
+143113     *------------------------------------------------------------*;
+
+143114     data EMWS2.Ids6_VariableSet;
+143115     length ROLE $32;
+143116     length LEVEL $10;
+143117     length REPORT $1;
+143118     label REPORT = "Report";
+143119     length ORDER $8;
+143120     length DROP $1;
+143121     length LOWERLIMIT 8;
+143122     length UPPERLIMIT 8;
+143123     set EMWS2.Ids6_EMCMETADEFAULT;
+143124     run;
+
+NOTE: There were 8 observations read from the data set EMWS2.IDS6_EMCMETADEFAULT.
+NOTE: The data set EMWS2.IDS6_VARIABLESET has 8 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+143125     * Ids6: End of Update Variables Set;
+143126     *------------------------------------------------------------*;
+
+143127     *------------------------------------------------------------*;
+143128     * Ids6: Computing metadata for DATA data;
+143129     *------------------------------------------------------------*;
+
+143139     data EMWS2.Ids6_EMINFO;
+143140     length TARGET KEY $32 DATA $43;
+143141     TARGET="";
+143142     KEY="IDSTABLE";
+143143     DATA="FINALIB.GOLD";
+143144     output;
+143145     run;
+
+NOTE: The data set EMWS2.IDS6_EMINFO has 1 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+143146     data EMWS2.Ids6_CMeta_DATA;
+143147     set EMWS2.Ids6_VariableSet;
+143148     drop DROP;
+143149     where DROP='N';
+143150     run;
+
+NOTE: There were 8 observations read from the data set EMWS2.IDS6_VARIABLESET.
+      WHERE DROP='N';
+NOTE: The data set EMWS2.IDS6_CMETA_DATA has 8 observations and 20 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+143152     %let _HPDMGRIDHOST=;
+143153     %let _HPDMGRIDINSTALLLOC=;
+143154     %let _HPDMGRIDDATASERVER=;
+143155     %hpdm_gridSetOPtions;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+*------------------------------------------------------------* 
+* 
+* Ids6 : End Update 
+* datetime : 08DEC2019:09:54:13 
+* 
+*------------------------------------------------------------* 
+Traverser: Run Completed 
+143156     proc printto;
+143157     run;
+

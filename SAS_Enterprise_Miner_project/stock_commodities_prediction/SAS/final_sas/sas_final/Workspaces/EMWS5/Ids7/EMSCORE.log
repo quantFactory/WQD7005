@@ -1,0 +1,45 @@
+*------------------------------------------------------------*
+* Score Log
+Date:                December 19, 2019
+Time:                16:52:48
+*------------------------------------------------------------*
+11495  *------------------------------------------------------------*;
+11496  * Ids7: Computing metadata for DATA data;
+11497  *------------------------------------------------------------*;
+
+NOTE: View EMWS5.IDS7_DATA.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+11498  data EMWS5.Ids7_EMINFO;
+11499  length TARGET KEY $32 DATA $43;
+11500  TARGET="";
+11501  KEY="IDSTABLE";
+11502  DATA="FINALIB.ATTR";
+11503  output;
+11504  run;
+
+NOTE: The data set EMWS5.IDS7_EMINFO has 1 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: View EMWS5.IDS7_DATA.VIEW used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+11505  data EMWS5.Ids7_CMeta_DATA;
+11506  set EMWS5.Ids7_VariableSet;
+11507  drop DROP;
+11508  where DROP='N';
+11509  run;
+
+NOTE: There were 35 observations read from the data set EMWS5.IDS7_VARIABLESET.
+      WHERE DROP='N';
+NOTE: The data set EMWS5.IDS7_CMETA_DATA has 35 observations and 20 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
