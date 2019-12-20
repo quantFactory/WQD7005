@@ -76,3 +76,10 @@ AIRASIA = pd.concat([AIRASIA_stock["lastprice"],AIRASIA_combained["goldprice"],
                      AIRASIA_combained["silverprice"],AIRASIA_combained["oilprice"],
                      AIRASIA_combained["gasprice"],AIRASIA_news1["polarity"]]
                       , keys = ["stockprice","goldprice","silverprice","oilprice","gasprice","newspolarity"], axis = 1).ffill().bfill()
+
+
+#creating a CSV dataset output for combines stocks , commodity and news(GAMUDA)
+GAMUDA = pd.concat([GAMUDA_stock["lastprice"],GAMUDA_combained["goldprice"],
+                     GAMUDA_combained["silverprice"],GAMUDA_combained["oilprice"],
+                     GAMUDA_combained["gasprice"],GAMUDA_news1["polarity"]]
+                      , keys = ["stockprice","goldprice","silverprice","oilprice","gasprice","newspolarity"], axis = 1).ffill().bfill()
