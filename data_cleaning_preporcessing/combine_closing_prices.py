@@ -26,11 +26,9 @@ silver.drop(["Id","created_at"], axis=1, inplace=True)
 oil.drop(["Id","created_at"], axis=1, inplace=True)
 gas.drop(["Id","created_at"], axis=1, inplace=True)
 
-# using concat function to attach all closing prices togheter
+# using concat function to attach all closing prices and news together
 combained = pd.concat([gold["golddate"],gold["closeprice"],silver["closeprice"],
                      oil["closeprice"],gas["closeprice"]
                       ]
                       , keys = ["date","goldprice","silverprice","oilprice","gasprice"], axis = 1).ffill().bfill()
-
-
 combained.to_csv("combined.csv", sep=',', encoding='utf-8')
